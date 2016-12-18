@@ -215,20 +215,17 @@ function basename($path, $suffix = null)
 }
 
 /**
- * Returns directory name component of path
+ * Returns directory name component of path -> 返回路径中的目录部分
  * @link http://php.net/manual/en/function.dirname.php
- * @param string $path A path.
- * <p>
- * On Windows, both slash (/) and backslash
- * (\) are used as directory separator character. In
- * other environments, it is the forward slash (/).
+ * @param string $path A path. <br>
+ * On Windows, both slash (/) and backslash (\) are used as directory separator character. <br>
+ * In other environments, it is the forward slash (/).
  * @param int $levels <p>
  * The number of parent directories to go up. This must be an integer greater than 0.
  * @return string the name of the directory.
- * If there are no slashes in path, a dot ('.') is returned,
- * indicating the current directory.
- * Otherwise, the returned string is path with any trailing
- * /component removed.
+ * If there are no slashes in path, a dot ('.') is returned, indicating the current directory. -> <br>
+ *  如果在 path 中没有斜线，则返回一个点（'.'），表示当前目录。 <br>
+ * Otherwise, the returned string is path with any trailing /component removed.
  * @since 4.0
  */
 function dirname($path, $levels = 1)
@@ -236,29 +233,22 @@ function dirname($path, $levels = 1)
 }
 
 /**
- * Returns information about a file path
+ * Returns information about a file path ->  返回文件路径的信息
  * @link http://php.net/manual/en/function.pathinfo.php
- * @param string $path <p>
- * The path being checked.
- * </p>
+ * @param string $path The path being checked.
  * @param int $options [optional] <p>
- * You can specify which elements are returned with optional parameter
- * options. It composes from
+ * You can specify which elements are returned with optional parameter options. <br>
+ * It composes from
  * PATHINFO_DIRNAME,
  * PATHINFO_BASENAME,
  * PATHINFO_EXTENSION and
- * PATHINFO_FILENAME. It
- * defaults to return all elements.
- * </p>
+ * PATHINFO_FILENAME. <br>
+ * It defaults to return all elements.
  * @return mixed The following associative array elements are returned:
- * dirname, basename,
- * extension (if any), and filename.
- * </p>
+ * dirname, basename, extension (if any), and filename.
  * <p>
- * If options is used, this function will return a
- * string if not all elements are requested.
+ * If options is used, this function will return a string if not all elements are requested.
  * @since 4.0.3
- * @since 5.0
  */
 function pathinfo($path, $options = null)
 {
@@ -344,25 +334,18 @@ function stristr($haystack, $needle, $before_needle = null)
 }
 
 /**
- * Find the last occurrence of a character in a string
+ * Find the last occurrence of a character in a string ->  查找指定字符在字符串中的最后一次出现
  * @link http://php.net/manual/en/function.strrchr.php
- * @param string $haystack <p>
- * The string to search in
- * </p>
+ * @param string $haystack <p> The string to search in
  * @param mixed $needle <p>
  * If <b>needle</b> contains more than one character,
  * only the first is used. This behavior is different from that of {@see strstr()}.
- * </p>
  * <p>
- * If <b>needle</b> is not a string, it is converted to
- * an integer and applied as the ordinal value of a character.
+ * If <b>needle</b> is not a string, it is converted to an integer and applied as the ordinal value of a character.
  * </p>
  * @return string <p>
- * This function returns the portion of string, or <b>FALSE</b> if
- * <b>needle</b> is not found.
- * </p>
+ * This function returns the portion of string, or <b>FALSE</b> if <b>needle</b> is not found.
  * @since 4.0
- * @since 5.0
  */
 function strrchr($haystack, $needle)
 {
@@ -520,55 +503,32 @@ function money_format($format, $number)
 }
 
 /**
- * Return part of a string
+ * Return part of a string -> 返回字符串的子串
  * @link http://php.net/manual/en/function.substr.php
- * @param string $string <p>
- * The input string.
- * </p>
+ * @param string $string The input string.
  * @param int $start <p>
- * If start is non-negative, the returned string
- * will start at the start'th position in
- * string, counting from zero. For instance,
- * in the string 'abcdef', the character at
- * position 0 is 'a', the
- * character at position 2 is
- * 'c', and so forth.
- * </p>
+ * If start is non-negative, the returned string will start at the start'th position in string,
+ * counting from zero. <br>
+ * For instance, in the string 'abcdef', the character at position 0 is 'a', <br>
+ * the character at position 2 is 'c', and so forth.
  * <p>
- * If start is negative, the returned string
- * will start at the start'th character
- * from the end of string.
- * </p>
+ * If start is negative, the returned string will start at the start'th character
+ * from the end of string. ->  可以为负数
  * <p>
- * If string is less than or equal to
- * start characters long, false will be returned.
- * </p>
+ * If string is less than or equal to start characters long, false will be returned.
  * <p>
- * Using a negative start
- * ]]>
- * </p>
  * @param int $length [optional] <p>
- * If length is given and is positive, the string
- * returned will contain at most length characters
- * beginning from start (depending on the length of
- * string).
- * </p>
+ * If length is given and is positive, the string returned will contain at most length characters <br>
+ * beginning from start (depending on the length of string).
  * <p>
- * If length is given and is negative, then that many
- * characters will be omitted from the end of string
- * (after the start position has been calculated when a
- * start is negative). If
- * start denotes a position beyond this truncation,
- * an empty string will be returned.
- * </p>
+ * If length is given and is negative, then that many characters will be omitted from the end of string
+ * (after the start position has been calculated when a start is negative). ->  <br>
+ * 如果提供了负数的 length，那么 string 末尾处的 length 个字符将会被省略（若 start 是负数则从字符串尾部算起）。
+ * 如果 start 不在这段文本中，那么将返回 FALSE。
+ * If start denotes a position beyond this truncation, an empty string will be returned.
  * <p>
- * If length is given and is 0,
- * false or &null; an empty string will be returned.
- * </p>
- * Using a negative length
- * ]]>
- * @return string the extracted part of string or false on failure.
- * @since 4.0
+ * If length is given and is 0, false or &null; an empty string will be returned.
+ * @return string|bool the extracted part of string or false on failure.
  * @since 5.0
  */
 function substr($string, $start, $length = null)

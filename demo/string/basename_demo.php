@@ -10,4 +10,4 @@ echo basename(__FILE__);
 print "\n";
 echo basename(__FILE__,"php");
 print "\n";
-echo dirname(null);
+echo dirname("test");
