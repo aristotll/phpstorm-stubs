@@ -281,15 +281,11 @@ function is_numeric ($var) {}
 function is_string ($var) {}
 
 /**
- * Finds whether a variable is an array
+ * Finds whether a variable is an array -> 检测变量是否是数组
  * @link http://php.net/manual/en/function.is-array.php
- * @param mixed $var <p>
- * The variable being evaluated.
- * </p>
- * @return bool true if var is an array, 
- * false otherwise.
+ * @param mixed $var The variable being evaluated.
+ * @return bool true if var is an array, false otherwise.
  * @since 4.0
- * @since 5.0
  */
 function is_array ($var) {}
 

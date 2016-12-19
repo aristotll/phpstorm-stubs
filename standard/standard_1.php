@@ -257,15 +257,14 @@ function pathinfo($path, $options = null)
 /**
  * Un-quotes a quoted string
  * @link http://php.net/manual/en/function.stripslashes.php
- * @param string $str <p>
- * The input string.
- * </p>
- * @return string a string with backslashes stripped off.
+ * @param string $str The input string.
+ * @return string a string with backslashes stripped off. <br>
  * (\' becomes ' and so on.)
- * Double backslashes (\\) are made into a single
- * backslash (\).
+ * Double backslashes (\\) are made into a single backslash (\). -> <br>
+ * 返回一个去除转义反斜线后的字符串（\' 转换为 ' 等等）。双反斜线（\\）被转换为单个反斜线（\）
+ * @see addslashes
+ * @see get_magic_quotes_gpc
  * @since 4.0
- * @since 5.0
  */
 function stripslashes($str)
 {
