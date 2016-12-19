@@ -14,7 +14,10 @@
  */
 function strip_slashes_deep($value)
 {
-    return is_array($value) ? array_map("strip_slashes_deep", $value) : stripslashes($value);
+    if (isset($value)) {
+        return is_array($value) ? array_map("strip_slashes_deep", $value) : stripslashes($value);
+    }
+    return $value;
 }
 
 $strips_slashes_deep = strip_slashes_deep(["f\\'oo", "b\\'ar", ["fo\\'o", "b\\'ar"]]);
