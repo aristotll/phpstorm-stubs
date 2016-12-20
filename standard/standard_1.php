@@ -634,21 +634,13 @@ function ucwords($str, $delimiters = " \t\r\n\f\v")
 /**
  * Translate certain characters
  * @link http://php.net/manual/en/function.strtr.php
- * @param string $str <p>
- * The string being translated.
- * </p>
- * @param string $from <p>
- * The string replacing from.
- * </p>
- * @param string $to <p>
- * The string being translated to to.
- * </p>
+ * @param string $str The string being translated.
+ * @param string $from The string replacing from. -> 字符串中将要被转换的字符
+ * @param string $to The string being translated to to.
  * @return string This function returns a copy of str,
  * translating all occurrences of each character in
- * from to the corresponding character in
- * to.
+ * from to the corresponding character in to.
  * @since 4.0
- * @since 5.0
  */
 function strtr($str, $from, $to)
 {
