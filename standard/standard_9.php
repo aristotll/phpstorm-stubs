@@ -657,17 +657,12 @@ function array_filter(array $input, $callback = null, $flag = 0) { }
 /**
  * Applies the callback to the elements of the given arrays
  * @link http://php.net/manual/en/function.array-map.php
- * @param callback $callback <p>
- * Callback function to run for each element in each array.
- * </p>
- * @param array $arr1 <p>
- * An array to run through the callback function.
- * </p>
+ * @param callback $callback Callback function to run for each element in each array. -> <br>
+ * callback 函数形参的数量和传给 array_map() 数组数量，两者必须一样
+ * @param array $arr1 An array to run through the callback function.
  * @param array $_ [optional]
- * @return array an array containing all the elements of arr1
- * after applying the callback function to each one.
+ * @return array an array containing all the elements of arr1 after applying the callback function to each one.
  * @since 4.0.6
- * @since 5.0
  */
 function array_map($callback, array $arr1, array $_ = null) { }
 
