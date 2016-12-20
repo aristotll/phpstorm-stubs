@@ -19,7 +19,7 @@
  * <p>
  * If the value returned in errno is
  * 0 and the function returned false, it is an
- * indication that the error occurred before the 
+ * indication that the error occurred before the
  * connect() call. This is most likely due to a
  * problem initializing the socket.
  * </p>
@@ -31,7 +31,7 @@
  * </p>
  * <p>
  * If you need to set a timeout for reading/writing data over the
- * socket, use stream_set_timeout, as the 
+ * socket, use stream_set_timeout, as the
  * timeout parameter to
  * fsockopen only applies while connecting the
  * socket.
@@ -44,21 +44,25 @@
  * @since 4.0
  * @since 5.0
  */
-function fsockopen ($hostname, $port = null, &$errno = null, &$errstr = null, $timeout = null) {}
+function fsockopen($hostname, $port = null, &$errno = null, &$errstr = null, $timeout = null)
+{
+}
 
 /**
  * Open persistent Internet or Unix domain socket connection
  * @link http://php.net/manual/en/function.pfsockopen.php
- * @param string $hostname 
- * @param int $port [optional] 
- * @param int $errno [optional] 
- * @param string $errstr [optional] 
- * @param float $timeout [optional] 
- * @return resource 
+ * @param string $hostname
+ * @param int $port [optional]
+ * @param int $errno [optional]
+ * @param string $errstr [optional]
+ * @param float $timeout [optional]
+ * @return resource
  * @since 4.0
  * @since 5.0
  */
-function pfsockopen ($hostname, $port = null, &$errno = null, &$errstr = null, $timeout = null) {}
+function pfsockopen($hostname, $port = null, &$errno = null, &$errstr = null, $timeout = null)
+{
+}
 
 /**
  * Pack data into binary string
@@ -162,12 +166,14 @@ function pfsockopen ($hostname, $port = null, &$errno = null, &$errstr = null, $
  * </p>
  * @param mixed $args [optional] <p>
  * </p>
- * @param mixed $_ [optional] 
+ * @param mixed $_ [optional]
  * @return string a binary string containing data.
  * @since 4.0
  * @since 5.0
  */
-function pack ($format, $args = null, $_ = null) {}
+function pack($format, $args = null, $_ = null)
+{
+}
 
 /**
  * Unpack data from binary string
@@ -184,7 +190,9 @@ function pack ($format, $args = null, $_ = null) {}
  * @since 4.0
  * @since 5.0
  */
-function unpack ($format, $data, $offset) {}
+function unpack($format, $data, $offset)
+{
+}
 
 /**
  * Tells what the user's browser is capable of
@@ -215,7 +223,9 @@ function unpack ($format, $data, $offset) {}
  * @since 4.0
  * @since 5.0
  */
-function get_browser ($user_agent = null, $return_array = null) {}
+function get_browser($user_agent = null, $return_array = null)
+{
+}
 
 /**
  * One-way string encryption (hashing)
@@ -237,7 +247,9 @@ function get_browser ($user_agent = null, $return_array = null) {}
  * @since 4.0
  * @since 5.0
  */
-function crypt ($str, $salt = null) {}
+function crypt($str, $salt = null)
+{
+}
 
 /**
  * Open directory handle
@@ -246,18 +258,18 @@ function crypt ($str, $salt = null) {}
  * The directory path that is to be opened
  * </p>
  * @param resource $context [optional] <p>
- * For a description of the context parameter, 
+ * For a description of the context parameter,
  * refer to the streams section of
  * the manual.
  * </p>
  * @return resource a directory handle resource on success, or
  * false on failure.
- * </p> 
+ * </p>
  * <p>
  * If path is not a valid directory or the
  * directory can not be opened due to permission restrictions or
  * filesystem errors, opendir returns false and
- * generates a PHP error of level 
+ * generates a PHP error of level
  * E_WARNING. You can suppress the error output of
  * opendir by prepending
  * '@' to the
@@ -265,22 +277,26 @@ function crypt ($str, $salt = null) {}
  * @since 4.0
  * @since 5.0
  */
-function opendir ($path, $context = null) {}
+function opendir($path, $context = null)
+{
+}
 
 /**
  * Close directory handle
  * @link http://php.net/manual/en/function.closedir.php
  * @param resource $dir_handle [optional] <p>
  * The directory handle resource previously opened
- * with opendir. If the directory handle is 
- * not specified, the last link opened by opendir 
+ * with opendir. If the directory handle is
+ * not specified, the last link opened by opendir
  * is assumed.
  * </p>
- * @return void 
+ * @return void
  * @since 4.0
  * @since 5.0
  */
-function closedir ($dir_handle = null) {}
+function closedir($dir_handle = null)
+{
+}
 
 /**
  * Change directory
@@ -292,7 +308,9 @@ function closedir ($dir_handle = null) {}
  * @since 4.0
  * @since 5.0
  */
-function chdir ($directory) {}
+function chdir($directory)
+{
+}
 
 /**
  * Change the root directory
@@ -304,14 +322,16 @@ function chdir ($directory) {}
  * @since 4.0.5
  * @since 5.0
  */
-function chroot ($directory) {}
+function chroot($directory)
+{
+}
 
 /**
  * Gets the current working directory
  * @link http://php.net/manual/en/function.getcwd.php
  * @return string the current working directory on success, or false on
  * failure.
- * </p> 
+ * </p>
  * <p>
  * On some Unix variants, getcwd will return
  * false if any one of the parent directories does not have the
@@ -321,48 +341,56 @@ function chroot ($directory) {}
  * @since 4.0
  * @since 5.0
  */
-function getcwd () {}
+function getcwd()
+{
+}
 
 /**
  * Rewind directory handle
  * @link http://php.net/manual/en/function.rewinddir.php
  * @param resource $dir_handle [optional] <p>
  * The directory handle resource previously opened
- * with opendir. If the directory handle is 
- * not specified, the last link opened by opendir 
+ * with opendir. If the directory handle is
+ * not specified, the last link opened by opendir
  * is assumed.
  * </p>
- * @return void 
+ * @return void
  * @since 4.0
  * @since 5.0
  */
-function rewinddir ($dir_handle = null) {}
+function rewinddir($dir_handle = null)
+{
+}
 
 /**
  * Read entry from directory handle
  * @link http://php.net/manual/en/function.readdir.php
  * @param resource $dir_handle [optional] <p>
  * The directory handle resource previously opened
- * with opendir. If the directory handle is 
- * not specified, the last link opened by opendir 
+ * with opendir. If the directory handle is
+ * not specified, the last link opened by opendir
  * is assumed.
  * </p>
  * @return string the filename on success or false on failure.
  * @since 4.0
  * @since 5.0
  */
-function readdir ($dir_handle = null) {}
+function readdir($dir_handle = null)
+{
+}
 
 /**
  * Return an instance of the Directory class
  * @link http://php.net/manual/en/class.dir.php
  * @param $directory
  * @param $context [optional]
- * @return Directory 
+ * @return Directory
  * @since 4.0
  * @since 5.0
  */
-function dir ($directory, $context) {}
+function dir($directory, $context)
+{
+}
 
 /**
  * List files and directories inside the specified path
@@ -376,17 +404,19 @@ function dir ($directory, $context) {}
  * then the sort order is alphabetical in descending order.
  * </p>
  * @param resource $context [optional] <p>
- * For a description of the context parameter, 
+ * For a description of the context parameter,
  * refer to the streams section of
  * the manual.
  * </p>
- * @return array an array of filenames on success, or false on 
- * failure. If directory is not a directory, then 
- * boolean false is returned, and an error of level 
+ * @return array an array of filenames on success, or false on
+ * failure. If directory is not a directory, then
+ * boolean false is returned, and an error of level
  * E_WARNING is generated.
  * @since 5.0
  */
-function scandir ($directory, $sorting_order = null, $context = null) {}
+function scandir($directory, $sorting_order = null, $context = null)
+{
+}
 
 /**
  * Find pathnames matching a pattern
@@ -406,7 +436,9 @@ function scandir ($directory, $sorting_order = null, $context = null) {}
  * @since 4.3.0
  * @since 5.0
  */
-function glob ($pattern, $flags = null) {}
+function glob($pattern, $flags = null)
+{
+}
 
 /**
  * Gets last access time of file
@@ -419,7 +451,9 @@ function glob ($pattern, $flags = null) {}
  * @since 4.0
  * @since 5.0
  */
-function fileatime ($filename) {}
+function fileatime($filename)
+{
+}
 
 /**
  * Gets inode change time of file
@@ -432,7 +466,9 @@ function fileatime ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function filectime ($filename) {}
+function filectime($filename)
+{
+}
 
 /**
  * Gets file group
@@ -447,7 +483,9 @@ function filectime ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function filegroup ($filename) {}
+function filegroup($filename)
+{
+}
 
 /**
  * Gets file inode
@@ -459,7 +497,9 @@ function filegroup ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function fileinode ($filename) {}
+function fileinode($filename)
+{
+}
 
 /**
  * Gets file modification time
@@ -473,7 +513,9 @@ function fileinode ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function filemtime ($filename) {}
+function filemtime($filename)
+{
+}
 
 /**
  * Gets file owner
@@ -487,7 +529,9 @@ function filemtime ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function fileowner ($filename) {}
+function fileowner($filename)
+{
+}
 
 /**
  * Gets file permissions
@@ -499,7 +543,9 @@ function fileowner ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function fileperms ($filename) {}
+function fileperms($filename)
+{
+}
 
 /**
  * Gets file size
@@ -512,7 +558,9 @@ function fileperms ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function filesize ($filename) {}
+function filesize($filename)
+{
+}
 
 /**
  * Gets file type
@@ -530,7 +578,9 @@ function filesize ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function filetype ($filename) {}
+function filetype($filename)
+{
+}
 
 /**
  * Checks whether a file or directory exists
@@ -560,7 +610,9 @@ function filetype ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function file_exists ($filename) {}
+function file_exists($filename)
+{
+}
 
 /**
  * Tells whether the filename is writable
@@ -573,7 +625,9 @@ function file_exists ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function is_writable ($filename) {}
+function is_writable($filename)
+{
+}
 
 /**
  * &Alias; <function>is_writable</function>
@@ -586,7 +640,9 @@ function is_writable ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function is_writeable ($filename) {}
+function is_writeable($filename)
+{
+}
 
 /**
  * Tells whether a file exists and is readable
@@ -599,7 +655,9 @@ function is_writeable ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function is_readable ($filename) {}
+function is_readable($filename)
+{
+}
 
 /**
  * Tells whether the filename is executable
@@ -612,7 +670,9 @@ function is_readable ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function is_executable ($filename) {}
+function is_executable($filename)
+{
+}
 
 /**
  * Tells whether the filename is a regular file
@@ -625,7 +685,9 @@ function is_executable ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function is_file ($filename) {}
+function is_file($filename)
+{
+}
 
 /**
  * Tells whether the filename is a directory
@@ -633,7 +695,7 @@ function is_file ($filename) {}
  * @param string $filename <p>
  * Path to the file. If filename is a relative
  * filename, it will be checked relative to the current working
- * directory. If filename is a symbolic or hard link 
+ * directory. If filename is a symbolic or hard link
  * then the link will be resolved and checked.
  * </p>
  * @return bool true if the filename exists and is a directory, false
@@ -641,7 +703,9 @@ function is_file ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function is_dir ($filename) {}
+function is_dir($filename)
+{
+}
 
 /**
  * Tells whether the filename is a symbolic link
@@ -654,7 +718,9 @@ function is_dir ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function is_link ($filename) {}
+function is_link($filename)
+{
+}
 
 /**
  * Gives information about a file
@@ -747,7 +813,9 @@ function is_link ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function stat ($filename) {}
+function stat($filename)
+{
+}
 
 /**
  * Gives information about a file or symbolic link
@@ -764,7 +832,9 @@ function stat ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function lstat ($filename) {}
+function lstat($filename)
+{
+}
 
 /**
  * Changes file owner
@@ -779,7 +849,9 @@ function lstat ($filename) {}
  * @since 4.0
  * @since 5.0
  */
-function chown ($filename, $user) {}
+function chown($filename, $user)
+{
+}
 
 /**
  * Changes file group
@@ -794,7 +866,9 @@ function chown ($filename, $user) {}
  * @since 4.0
  * @since 5.0
  */
-function chgrp ($filename, $group) {}
+function chgrp($filename, $group)
+{
+}
 
 /**
  * Changes user ownership of symlink
@@ -808,7 +882,9 @@ function chgrp ($filename, $group) {}
  * @return bool true on success or false on failure.
  * @since 5.1.2
  */
-function lchown ($filename, $user) {}
+function lchown($filename, $user)
+{
+}
 
 /**
  * Changes group ownership of symlink
@@ -822,7 +898,9 @@ function lchown ($filename, $user) {}
  * @return bool true on success or false on failure.
  * @since 5.1.2
  */
-function lchgrp ($filename, $group) {}
+function lchgrp($filename, $group)
+{
+}
 
 /**
  * Changes file mode
@@ -856,7 +934,9 @@ function lchgrp ($filename, $group) {}
  * @since 4.0
  * @since 5.0
  */
-function chmod ($filename, $mode) {}
+function chmod($filename, $mode)
+{
+}
 
 /**
  * Sets access and modification time of file
@@ -865,11 +945,11 @@ function chmod ($filename, $mode) {}
  * The name of the file being touched.
  * </p>
  * @param int $time [optional] <p>
- * The touch time. If time is not supplied, 
+ * The touch time. If time is not supplied,
  * the current system time is used.
  * </p>
  * @param int $atime [optional] <p>
- * If present, the access time of the given filename is set to 
+ * If present, the access time of the given filename is set to
  * the value of atime. Otherwise, it is set to
  * time.
  * </p>
@@ -877,7 +957,9 @@ function chmod ($filename, $mode) {}
  * @since 4.0
  * @since 5.0
  */
-function touch ($filename, $time = null, $atime = null) {}
+function touch($filename, $time = null, $atime = null)
+{
+}
 
 /**
  * Clears file status cache
@@ -886,14 +968,16 @@ function touch ($filename, $time = null, $atime = null) {}
  * Whenever to clear realpath cache or not.
  * </p>
  * @param string $filename [optional] <p>
- * Clear realpath cache on a specific filename, only used if 
+ * Clear realpath cache on a specific filename, only used if
  * clear_realpath_cache is true.
  * </p>
- * @return void 
+ * @return void
  * @since 4.0
  * @since 5.0
  */
-function clearstatcache ($clear_realpath_cache = null, $filename = null) {}
+function clearstatcache($clear_realpath_cache = null, $filename = null)
+{
+}
 
 /**
  * Returns the total size of a directory
@@ -906,7 +990,9 @@ function clearstatcache ($clear_realpath_cache = null, $filename = null) {}
  * @since 4.1.0
  * @since 5.0
  */
-function disk_total_space ($directory) {}
+function disk_total_space($directory)
+{
+}
 
 /**
  * Returns available space in directory
@@ -924,7 +1010,9 @@ function disk_total_space ($directory) {}
  * @since 4.1.0
  * @since 5.0
  */
-function disk_free_space ($directory) {}
+function disk_free_space($directory)
+{
+}
 
 /**
  * &Alias; <function>disk_free_space</function>
@@ -933,7 +1021,9 @@ function disk_free_space ($directory) {}
  * @since 4.0
  * @since 5.0
  */
-function diskfreespace ($path) {}
+function diskfreespace($path)
+{
+}
 
 /**
  * Send mail
@@ -977,7 +1067,7 @@ function diskfreespace ($path) {}
  * </p>
  * <p>
  * When sending mail, the mail must contain
- * a From header. This can be set with the 
+ * a From header. This can be set with the
  * additional_headers parameter, or a default
  * can be set in &php.ini;.
  * </p>
@@ -1017,7 +1107,9 @@ function diskfreespace ($path) {}
  * @since 4.0
  * @since 5.0
  */
-function mail ($to, $subject, $message, $additional_headers = null, $additional_parameters = null) {}
+function mail($to, $subject, $message, $additional_headers = null, $additional_parameters = null)
+{
+}
 
 /**
  * Calculate the hash value needed by EZMLM
@@ -1029,13 +1121,15 @@ function mail ($to, $subject, $message, $additional_headers = null, $additional_
  * @since 4.0.2
  * @since 5.0
  */
-function ezmlm_hash ($addr) {}
+function ezmlm_hash($addr)
+{
+}
 
 /**
  * Open connection to system logger
  * @link http://php.net/manual/en/function.openlog.php
  * @param string $ident <p>
- * The string ident is added to each message. 
+ * The string ident is added to each message.
  * </p>
  * @param int $option <p>
  * The option argument is used to indicate
@@ -1094,7 +1188,7 @@ function ezmlm_hash ($addr) {}
  * <tr valign="top">
  * <td>LOG_AUTH</td>
  * <td>
- * security/authorization messages (use 
+ * security/authorization messages (use
  * LOG_AUTHPRIV instead
  * in systems where that constant is defined)
  * </td>
@@ -1153,6 +1247,8 @@ function ezmlm_hash ($addr) {}
  * @since 4.0
  * @since 5.0
  */
-function openlog ($ident, $option, $facility) {}
+function openlog($ident, $option, $facility)
+{
+}
 
 ?>

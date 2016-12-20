@@ -807,112 +807,142 @@ define('GEARMAN_WORKER_STATE_PRE_SLEEP', 5);
 
 /**
  */
-function gearman_version() {}
+function gearman_version()
+{
+}
 
 /**
  */
-function gearman_bugreport() {}
+function gearman_bugreport()
+{
+}
 
 /**
  * @param $verbose
  */
-function gearman_verbose_name($verbose) {}
+function gearman_verbose_name($verbose)
+{
+}
 
 /**
  * @param $client_object
  */
-function gearman_client_return_code($client_object) {}
+function gearman_client_return_code($client_object)
+{
+}
 
 /**
  * @param $client_object
  */
-function gearman_client_create($client_object) {}
+function gearman_client_create($client_object)
+{
+}
 
 /**
  * @param $client_object
  */
-function gearman_client_clone($client_object) {}
+function gearman_client_clone($client_object)
+{
+}
 
 /**
  * @param $client_object
  */
-function gearman_client_error($client_object) {}
+function gearman_client_error($client_object)
+{
+}
 
 /**
  * @param $client_object
  */
-function gearman_client_errno($client_object) {}
+function gearman_client_errno($client_object)
+{
+}
 
 /**
  * @param $client_object
  */
-function gearman_client_options($client_object) {}
+function gearman_client_options($client_object)
+{
+}
 
 /**
  * @param $client_object
  * @param $option
  */
-function gearman_client_set_options($client_object, $option) {}
+function gearman_client_set_options($client_object, $option)
+{
+}
 
 /**
  * @param $client_object
  * @param $option
  */
-function gearman_client_add_options($client_object, $option) {}
+function gearman_client_add_options($client_object, $option)
+{
+}
 
 /**
  * @param $client_object
  * @param $option
  */
-function gearman_client_remove_options($client_object, $option) {}
+function gearman_client_remove_options($client_object, $option)
+{
+}
 
 /**
  * @param $client_object
  */
-function gearman_client_timeout($client_object) {}
+function gearman_client_timeout($client_object)
+{
+}
 
 /**
  * @param $client_object
  * @param $timeout
  */
-function gearman_client_set_timeout($client_object, $timeout) {}
+function gearman_client_set_timeout($client_object, $timeout)
+{
+}
 
 /**
  * @param $client_object
  */
-function gearman_client_context($client_object) {}
+function gearman_client_context($client_object)
+{
+}
 
 /**
  * @param $client_object
  * @param $context
  */
-function gearman_client_set_context($client_object, $context) {}
+function gearman_client_set_context($client_object, $context)
+{
+}
 
 /**
  * @param $client_object
  * @param $host
  * @param $port
  */
-function gearman_client_add_server($client_object, $host, $port) {}
+function gearman_client_add_server($client_object, $host, $port)
+{
+}
 
 /**
  * @param $client_object
  * @param $servers
  */
-function gearman_client_add_servers($client_object, $servers) {}
+function gearman_client_add_servers($client_object, $servers)
+{
+}
 
 /**
  * @param $client_object
  */
-function gearman_client_wait($client_object) {}
-
-/**
- * @param $client_object
- * @param $function_name
- * @param $workload
- * @param $unique
- */
-function gearman_client_do($client_object, $function_name, $workload, $unique) {}
+function gearman_client_wait($client_object)
+{
+}
 
 /**
  * @param $client_object
@@ -920,7 +950,19 @@ function gearman_client_do($client_object, $function_name, $workload, $unique) {
  * @param $workload
  * @param $unique
  */
-function gearman_client_do_high($client_object, $function_name, $workload, $unique) {}
+function gearman_client_do($client_object, $function_name, $workload, $unique)
+{
+}
+
+/**
+ * @param $client_object
+ * @param $function_name
+ * @param $workload
+ * @param $unique
+ */
+function gearman_client_do_high($client_object, $function_name, $workload, $unique)
+{
+}
 
 /**
  * @param $client_object
@@ -928,7 +970,9 @@ function gearman_client_do_high($client_object, $function_name, $workload, $uniq
  * @param string $workload
  * @param string $unique
  */
-function gearman_client_do_normal($client_object, $function_name, $workload, $unique) {}
+function gearman_client_do_normal($client_object, $function_name, $workload, $unique)
+{
+}
 
 /**
  * @param $client_object
@@ -936,33 +980,23 @@ function gearman_client_do_normal($client_object, $function_name, $workload, $un
  * @param $workload
  * @param $unique
  */
-function gearman_client_do_low($client_object, $function_name, $workload, $unique) {}
+function gearman_client_do_low($client_object, $function_name, $workload, $unique)
+{
+}
 
 /**
  * @param $client_object
  */
-function gearman_client_do_job_handle($client_object) {}
+function gearman_client_do_job_handle($client_object)
+{
+}
 
 /**
  * @param $client_object
  */
-function gearman_client_do_status($client_object) {}
-
-/**
- * @param $client_object
- * @param $function_name
- * @param $workload
- * @param $unique
- */
-function gearman_client_do_background($client_object, $function_name, $workload, $unique) {}
-
-/**
- * @param $client_object
- * @param $function_name
- * @param $workload
- * @param $unique
- */
-function gearman_client_do_high_background($client_object, $function_name, $workload, $unique) {}
+function gearman_client_do_status($client_object)
+{
+}
 
 /**
  * @param $client_object
@@ -970,28 +1004,45 @@ function gearman_client_do_high_background($client_object, $function_name, $work
  * @param $workload
  * @param $unique
  */
-function gearman_client_do_low_background($client_object, $function_name, $workload, $unique) {}
+function gearman_client_do_background($client_object, $function_name, $workload, $unique)
+{
+}
+
+/**
+ * @param $client_object
+ * @param $function_name
+ * @param $workload
+ * @param $unique
+ */
+function gearman_client_do_high_background($client_object, $function_name, $workload, $unique)
+{
+}
+
+/**
+ * @param $client_object
+ * @param $function_name
+ * @param $workload
+ * @param $unique
+ */
+function gearman_client_do_low_background($client_object, $function_name, $workload, $unique)
+{
+}
 
 /**
  * @param $client_object
  * @param $job_handle
  */
-function gearman_client_job_status($client_object, $job_handle) {}
+function gearman_client_job_status($client_object, $job_handle)
+{
+}
 
 /**
  * @param $client_object
  * @param $workload
  */
-function gearman_client_echo($client_object, $workload) {}
-
-/**
- * @param $client_object
- * @param $function_name
- * @param $workload
- * @param $context
- * @param $unique
- */
-function gearman_client_add_task($client_object, $function_name, $workload, $context, $unique) {}
+function gearman_client_echo($client_object, $workload)
+{
+}
 
 /**
  * @param $client_object
@@ -1000,7 +1051,9 @@ function gearman_client_add_task($client_object, $function_name, $workload, $con
  * @param $context
  * @param $unique
  */
-function gearman_client_add_task_high($client_object, $function_name, $workload, $context, $unique) {}
+function gearman_client_add_task($client_object, $function_name, $workload, $context, $unique)
+{
+}
 
 /**
  * @param $client_object
@@ -1009,7 +1062,9 @@ function gearman_client_add_task_high($client_object, $function_name, $workload,
  * @param $context
  * @param $unique
  */
-function gearman_client_add_task_low($client_object, $function_name, $workload, $context, $unique) {}
+function gearman_client_add_task_high($client_object, $function_name, $workload, $context, $unique)
+{
+}
 
 /**
  * @param $client_object
@@ -1018,7 +1073,9 @@ function gearman_client_add_task_low($client_object, $function_name, $workload, 
  * @param $context
  * @param $unique
  */
-function gearman_client_add_task_background($client_object, $function_name, $workload, $context, $unique) {}
+function gearman_client_add_task_low($client_object, $function_name, $workload, $context, $unique)
+{
+}
 
 /**
  * @param $client_object
@@ -1027,7 +1084,9 @@ function gearman_client_add_task_background($client_object, $function_name, $wor
  * @param $context
  * @param $unique
  */
-function gearman_client_add_task_high_background($client_object, $function_name, $workload, $context, $unique) {}
+function gearman_client_add_task_background($client_object, $function_name, $workload, $context, $unique)
+{
+}
 
 /**
  * @param $client_object
@@ -1036,233 +1095,328 @@ function gearman_client_add_task_high_background($client_object, $function_name,
  * @param $context
  * @param $unique
  */
-function gearman_client_add_task_low_background($client_object, $function_name, $workload, $context, $unique) {}
+function gearman_client_add_task_high_background($client_object, $function_name, $workload, $context, $unique)
+{
+}
+
+/**
+ * @param $client_object
+ * @param $function_name
+ * @param $workload
+ * @param $context
+ * @param $unique
+ */
+function gearman_client_add_task_low_background($client_object, $function_name, $workload, $context, $unique)
+{
+}
 
 /**
  * @param $client_object
  * @param $job_handle
  * @param $context
  */
-function gearman_client_add_task_status($client_object, $job_handle, $context) {}
+function gearman_client_add_task_status($client_object, $job_handle, $context)
+{
+}
 
 /**
  * @param $client_object
  * @param $callback
  */
-function gearman_client_set_workload_fn($client_object, $callback) {}
+function gearman_client_set_workload_fn($client_object, $callback)
+{
+}
 
 /**
  * @param $client_object
  * @param $callback
  */
-function gearman_client_set_created_fn($client_object, $callback) {}
+function gearman_client_set_created_fn($client_object, $callback)
+{
+}
 
 /**
  * @param $client_object
  * @param $callback
  */
-function gearman_client_set_data_fn($client_object, $callback) {}
+function gearman_client_set_data_fn($client_object, $callback)
+{
+}
 
 /**
  * @param $client_object
  * @param $callback
  */
-function gearman_client_set_warning_fn($client_object, $callback) {}
+function gearman_client_set_warning_fn($client_object, $callback)
+{
+}
 
 /**
  * @param $client_object
  * @param $callback
  */
-function gearman_client_set_status_fn($client_object, $callback) {}
+function gearman_client_set_status_fn($client_object, $callback)
+{
+}
 
 /**
  * @param $client_object
  * @param $callback
  */
-function gearman_client_set_complete_fn($client_object, $callback) {}
+function gearman_client_set_complete_fn($client_object, $callback)
+{
+}
 
 /**
  * @param $client_object
  * @param $callback
  */
-function gearman_client_set_exception_fn($client_object, $callback) {}
+function gearman_client_set_exception_fn($client_object, $callback)
+{
+}
 
 /**
  * @param $client_object
  * @param $callback
  */
-function gearman_client_set_fail_fn($client_object, $callback) {}
+function gearman_client_set_fail_fn($client_object, $callback)
+{
+}
 
 /**
  * @param $client_object
  */
-function gearman_client_clear_fn($client_object) {}
+function gearman_client_clear_fn($client_object)
+{
+}
 
 /**
  * @param $data
  */
-function gearman_client_run_tasks($data) {}
+function gearman_client_run_tasks($data)
+{
+}
 
 /**
  * @param $task_object
  */
-function gearman_task_return_code($task_object) {}
+function gearman_task_return_code($task_object)
+{
+}
 
 /**
  * @param $task_object
  */
-function gearman_task_function_name($task_object) {}
+function gearman_task_function_name($task_object)
+{
+}
 
 /**
  * @param $task_object
  */
-function gearman_task_unique($task_object) {}
+function gearman_task_unique($task_object)
+{
+}
 
 /**
  * @param $task_object
  */
-function gearman_task_job_handle($task_object) {}
+function gearman_task_job_handle($task_object)
+{
+}
 
 /**
  * @param $task_object
  */
-function gearman_task_is_known($task_object) {}
+function gearman_task_is_known($task_object)
+{
+}
 
 /**
  * @param $task_object
  */
-function gearman_task_is_running($task_object) {}
+function gearman_task_is_running($task_object)
+{
+}
 
 /**
  * @param $task_object
  */
-function gearman_task_numerator($task_object) {}
+function gearman_task_numerator($task_object)
+{
+}
 
 /**
  * @param $task_object
  */
-function gearman_task_denominator($task_object) {}
+function gearman_task_denominator($task_object)
+{
+}
 
 /**
  * @param $task_object
  * @param $data
  */
-function gearman_task_send_workload($task_object, $data) {}
+function gearman_task_send_workload($task_object, $data)
+{
+}
 
 /**
  * @param $task_object
  */
-function gearman_task_data($task_object) {}
+function gearman_task_data($task_object)
+{
+}
 
 /**
  * @param $task_object
  */
-function gearman_task_data_size($task_object) {}
+function gearman_task_data_size($task_object)
+{
+}
 
 /**
  * @param $task_object
  * @param $data_len
  */
-function gearman_task_recv_data($task_object, $data_len) {}
+function gearman_task_recv_data($task_object, $data_len)
+{
+}
 
 /**
  * @param $worker_object
  */
-function gearman_worker_return_code($worker_object) {}
+function gearman_worker_return_code($worker_object)
+{
+}
 
 /**
  */
-function gearman_worker_create() {}
-
-/**
- * @param $worker_object
- */
-function gearman_worker_clone($worker_object) {}
-
-/**
- * @param $worker_object
- */
-function gearman_worker_error($worker_object) {}
+function gearman_worker_create()
+{
+}
 
 /**
  * @param $worker_object
  */
-function gearman_worker_errno($worker_object) {}
+function gearman_worker_clone($worker_object)
+{
+}
 
 /**
  * @param $worker_object
  */
-function gearman_worker_options($worker_object) {}
+function gearman_worker_error($worker_object)
+{
+}
+
+/**
+ * @param $worker_object
+ */
+function gearman_worker_errno($worker_object)
+{
+}
+
+/**
+ * @param $worker_object
+ */
+function gearman_worker_options($worker_object)
+{
+}
 
 /**
  * @param $worker_object
  * @param $option
  */
-function gearman_worker_set_options($worker_object, $option) {}
+function gearman_worker_set_options($worker_object, $option)
+{
+}
 
 /**
  * @param $worker_object
  * @param $option
  */
-function gearman_worker_add_options($worker_object, $option) {}
+function gearman_worker_add_options($worker_object, $option)
+{
+}
 
 /**
  * @param $worker_object
  * @param $option
  */
-function gearman_worker_remove_options($worker_object, $option) {}
+function gearman_worker_remove_options($worker_object, $option)
+{
+}
 
 /**
  * @param $worker_object
  */
-function gearman_worker_timeout($worker_object) {}
+function gearman_worker_timeout($worker_object)
+{
+}
 
 /**
  * @param $worker_object
  * @param $timeout
  */
-function gearman_worker_set_timeout($worker_object, $timeout) {}
+function gearman_worker_set_timeout($worker_object, $timeout)
+{
+}
 
 /**
  * @param $worker_object
  * @param $host
  * @param $port
  */
-function gearman_worker_add_server($worker_object, $host, $port) {}
+function gearman_worker_add_server($worker_object, $host, $port)
+{
+}
 
 /**
  * @param $worker_object
  * @param $servers
  */
-function gearman_worker_add_servers($worker_object, $servers) {}
+function gearman_worker_add_servers($worker_object, $servers)
+{
+}
 
 /**
  * @param $worker_object
  */
-function gearman_worker_wait($worker_object) {}
+function gearman_worker_wait($worker_object)
+{
+}
 
 /**
  * @param $worker_object
  * @param $function_name
  * @param $timeout
  */
-function gearman_worker_register($worker_object, $function_name, $timeout) {}
+function gearman_worker_register($worker_object, $function_name, $timeout)
+{
+}
 
 /**
  * @param $worker_object
  * @param $function_name
  */
-function gearman_worker_unregister($worker_object, $function_name) {}
+function gearman_worker_unregister($worker_object, $function_name)
+{
+}
 
 /**
  * @param $worker_object
  */
-function gearman_worker_unregister_all($worker_object) {}
+function gearman_worker_unregister_all($worker_object)
+{
+}
 
 /**
  * @param $worker_object
  */
-function gearman_worker_grab_job($worker_object) {}
+function gearman_worker_grab_job($worker_object)
+{
+}
 
 /**
  * @param $worker_object
@@ -1271,92 +1425,122 @@ function gearman_worker_grab_job($worker_object) {}
  * @param $data
  * @param $timeout
  */
-function gearman_worker_add_function($worker_object, $function_name, $function, $data, $timeout) {}
+function gearman_worker_add_function($worker_object, $function_name, $function, $data, $timeout)
+{
+}
 
 /**
  * @param $worker_object
  */
-function gearman_worker_work($worker_object) {}
+function gearman_worker_work($worker_object)
+{
+}
 
 /**
  * @param $worker_object
  * @param $workload
  */
-function gearman_worker_echo($worker_object, $workload) {}
+function gearman_worker_echo($worker_object, $workload)
+{
+}
 
 /**
  * @param $job_object
  */
-function gearman_job_return_code($job_object) {}
+function gearman_job_return_code($job_object)
+{
+}
 
 /**
  * @param $job_object
  * @param $data
  */
-function gearman_job_send_data($job_object, $data) {}
+function gearman_job_send_data($job_object, $data)
+{
+}
 
 /**
  * @param $job_object
  * @param $warning
  */
-function gearman_job_send_warning($job_object, $warning) {}
+function gearman_job_send_warning($job_object, $warning)
+{
+}
 
 /**
  * @param $job_object
  * @param $numerator
  * @param $denominator
  */
-function gearman_job_send_status($job_object, $numerator, $denominator) {}
+function gearman_job_send_status($job_object, $numerator, $denominator)
+{
+}
 
 /**
  * @param $job_object
  * @param $result
  */
-function gearman_job_send_complete($job_object, $result) {}
+function gearman_job_send_complete($job_object, $result)
+{
+}
 
 /**
  * @param $job_object
  * @param $exception
  */
-function gearman_job_send_exception($job_object, $exception) {}
+function gearman_job_send_exception($job_object, $exception)
+{
+}
 
 /**
  * @param $job_object
  */
-function gearman_job_send_fail($job_object) {}
+function gearman_job_send_fail($job_object)
+{
+}
 
 /**
  * @param $job_object
  */
-function gearman_job_handle($job_object) {}
+function gearman_job_handle($job_object)
+{
+}
 
 /**
  * @param $job_object
  */
-function gearman_job_function_name($job_object) {}
+function gearman_job_function_name($job_object)
+{
+}
 
 /**
  * @param $job_object
  */
-function gearman_job_unique($job_object) {}
+function gearman_job_unique($job_object)
+{
+}
 
 /**
  * @param $job_object
  */
-function gearman_job_workload($job_object) {}
+function gearman_job_workload($job_object)
+{
+}
 
 /**
  * @param $job_object
  */
-function gearman_job_workload_size($job_object) {}
-
+function gearman_job_workload_size($job_object)
+{
+}
 
 
 /**
  * Class: GearmanClient
  *
  */
-class GearmanClient {
+class GearmanClient
+{
     /**
      * Creates a GearmanClient instance representing a client that connects to the job
      * server and submits tasks to complete.
@@ -1364,7 +1548,9 @@ class GearmanClient {
      * @link http://php.net/manual/en/gearmanclient.construct.php
      * @return  A GearmanClient object
      */
-    public function __construct() {}
+    public function __construct()
+    {
+    }
 
     /**
      * Returns the last Gearman return code.
@@ -1372,7 +1558,9 @@ class GearmanClient {
      * @link http://php.net/manual/en/gearmanclient.returncode.php
      * @return int A valid Gearman return code
      */
-    public function returnCode() {}
+    public function returnCode()
+    {
+    }
 
     /**
      * Returns an error string for the last error encountered.
@@ -1380,7 +1568,9 @@ class GearmanClient {
      * @link http://php.net/manual/en/gearmanclient.error.php
      * @return string A human readable error string
      */
-    public function error() {}
+    public function error()
+    {
+    }
 
     /**
      * Value of errno in the case of a GEARMAN_ERRNO return value.
@@ -1388,11 +1578,15 @@ class GearmanClient {
      * @link http://php.net/manual/en/gearmanclient.geterrno.php
      * @return int A valid Gearman errno
      */
-    public function getErrno() {}
+    public function getErrno()
+    {
+    }
 
     /**
-       */
-    public function options() {}
+     */
+    public function options()
+    {
+    }
 
     /**
      * Sets one or more client options.
@@ -1401,7 +1595,9 @@ class GearmanClient {
      * @param int $options The options to be set
      * @return bool Always returns true
      */
-    public function setOptions($options) {}
+    public function setOptions($options)
+    {
+    }
 
     /**
      * Adds one or more options to those already set.
@@ -1410,7 +1606,9 @@ class GearmanClient {
      * @param int $options The options to add
      * @return bool Always returns true
      */
-    public function addOptions($options) {}
+    public function addOptions($options)
+    {
+    }
 
     /**
      * Removes (unsets) one or more options.
@@ -1419,7 +1617,9 @@ class GearmanClient {
      * @param int $options The options to be removed (unset)
      * @return bool Always returns true
      */
-    public function removeOptions($options) {}
+    public function removeOptions($options)
+    {
+    }
 
     /**
      * Returns the timeout in milliseconds to wait for I/O activity.
@@ -1428,7 +1628,9 @@ class GearmanClient {
      * @return int Timeout in milliseconds to wait for I/O activity. A negative value means an
      *         infinite timeout
      */
-    public function timeout() {}
+    public function timeout()
+    {
+    }
 
     /**
      * Sets the timeout for socket I/O activity.
@@ -1437,7 +1639,9 @@ class GearmanClient {
      * @param int $timeout An interval of time in milliseconds
      * @return bool Always returns true
      */
-    public function setTimeout($timeout) {}
+    public function setTimeout($timeout)
+    {
+    }
 
     /**
      * Get the application context previously set with GearmanClient::setContext.
@@ -1445,7 +1649,9 @@ class GearmanClient {
      * @link http://php.net/manual/en/gearmanclient.context.php
      * @return string The same context data structure set with GearmanClient::setContext
      */
-    public function context() {}
+    public function context()
+    {
+    }
 
     /**
      * Sets an arbitrary string to provide application context that can later be
@@ -1455,7 +1661,9 @@ class GearmanClient {
      * @param string $context Arbitrary context data
      * @return bool Always returns true
      */
-    public function setContext($context) {}
+    public function setContext($context)
+    {
+    }
 
     /**
      * Adds a job server to a list of servers that can be used to run a task. No socket
@@ -1466,7 +1674,9 @@ class GearmanClient {
      * @param int $port
      * @return bool
      */
-    public function addServer($host = '127.0.0.1', $port = 4730) {}
+    public function addServer($host = '127.0.0.1', $port = 4730)
+    {
+    }
 
     /**
      * Adds a list of job servers that can be used to run a task. No socket I/O happens
@@ -1477,11 +1687,15 @@ class GearmanClient {
      *        in the format host:port
      * @return bool
      */
-    public function addServers($servers = '127.0.0.1:4730') {}
+    public function addServers($servers = '127.0.0.1:4730')
+    {
+    }
 
     /**
-       */
-    public function wait() {}
+     */
+    public function wait()
+    {
+    }
 
     /**
      * Runs a single high priority task and returns a string representation of the
@@ -1495,7 +1709,9 @@ class GearmanClient {
      * @param string $unique
      * @return string A string representing the results of running a task
      */
-    public function doHigh($function_name, $workload, $unique = null) {}
+    public function doHigh($function_name, $workload, $unique = null)
+    {
+    }
 
     /**
      * Runs a single task and returns a string representation of the
@@ -1509,7 +1725,9 @@ class GearmanClient {
      * @param string $unique
      * @return string A string representing the results of running a task
      */
-    public function doNormal($function_name, $workload, $unique = null) {}
+    public function doNormal($function_name, $workload, $unique = null)
+    {
+    }
 
     /**
      * Runs a single low priority task and returns a string representation of the
@@ -1523,7 +1741,9 @@ class GearmanClient {
      * @param string $unique
      * @return string A string representing the results of running a task
      */
-    public function doLow($function_name, $workload, $unique = null) {}
+    public function doLow($function_name, $workload, $unique = null)
+    {
+    }
 
     /**
      * Gets that job handle for a running task. This should be used between repeated
@@ -1533,7 +1753,9 @@ class GearmanClient {
      * @link http://php.net/manual/en/gearmanclient.dojobhandle.php
      * @return string The job handle for the running task
      */
-    public function doJobHandle() {}
+    public function doJobHandle()
+    {
+    }
 
     /**
      * Returns the status for the running task. This should be used between repeated
@@ -1543,7 +1765,9 @@ class GearmanClient {
      * @return array An array representing the percentage completion given as a fraction, with
      *         the first element the numerator and the second element the denomintor
      */
-    public function doStatus() {}
+    public function doStatus()
+    {
+    }
 
     /**
      * Runs a task in the background, returning a job handle which can be used to get
@@ -1555,7 +1779,9 @@ class GearmanClient {
      * @param string $unique
      * @return string The job handle for the submitted task
      */
-    public function doBackground($function_name, $workload, $unique = null) {}
+    public function doBackground($function_name, $workload, $unique = null)
+    {
+    }
 
     /**
      * Runs a high priority task in the background, returning a job handle which can be
@@ -1568,7 +1794,9 @@ class GearmanClient {
      * @param string $unique
      * @return string The job handle for the submitted task
      */
-    public function doHighBackground($function_name, $workload, $unique = null) {}
+    public function doHighBackground($function_name, $workload, $unique = null)
+    {
+    }
 
     /**
      * Runs a low priority task in the background, returning a job handle which can be
@@ -1581,7 +1809,9 @@ class GearmanClient {
      * @param string $unique
      * @return string The job handle for the submitted task
      */
-    public function doLowBackground($function_name, $workload, $unique = null) {}
+    public function doLowBackground($function_name, $workload, $unique = null)
+    {
+    }
 
     /**
      * Object oriented style (method):.
@@ -1594,7 +1824,9 @@ class GearmanClient {
      *         running, and the third and fourth elements correspond to the numerator and
      *         denominator of the fractional completion percentage, respectively
      */
-    public function jobStatus($job_handle) {}
+    public function jobStatus($job_handle)
+    {
+    }
 
     /**
      * Adds a task to be run in parallel with other tasks. Call this method for all the
@@ -1609,7 +1841,9 @@ class GearmanClient {
      * @param string $unique
      * @return GearmanTask A GearmanTask object or false if the task could not be added
      */
-    public function addTask($function_name, $workload, $context = null, $unique = null) {}
+    public function addTask($function_name, $workload, $context = null, $unique = null)
+    {
+    }
 
     /**
      * Adds a high priority task to be run in parallel with other tasks. Call this
@@ -1624,7 +1858,9 @@ class GearmanClient {
      * @param string $unique
      * @return GearmanTask A GearmanTask object or false if the task could not be added
      */
-    public function addTaskHigh($function_name, $workload, $context = null, $unique = null) {}
+    public function addTaskHigh($function_name, $workload, $context = null, $unique = null)
+    {
+    }
 
     /**
      * Adds a low priority background task to be run in parallel with other tasks. Call
@@ -1639,7 +1875,9 @@ class GearmanClient {
      * @param string $unique
      * @return GearmanTask A GearmanTask object or false if the task could not be added
      */
-    public function addTaskLow($function_name, $workload, $context = null, $unique = null) {}
+    public function addTaskLow($function_name, $workload, $context = null, $unique = null)
+    {
+    }
 
     /**
      * Adds a background task to be run in parallel with other tasks. Call this method
@@ -1653,7 +1891,9 @@ class GearmanClient {
      * @param string $unique
      * @return GearmanTask A GearmanTask object or false if the task could not be added
      */
-    public function addTaskBackground($function_name, $workload, $context = null, $unique = null) {}
+    public function addTaskBackground($function_name, $workload, $context = null, $unique = null)
+    {
+    }
 
     /**
      * Adds a high priority background task to be run in parallel with other tasks.
@@ -1668,7 +1908,9 @@ class GearmanClient {
      * @param string $unique
      * @return GearmanTask A GearmanTask object or false if the task could not be added
      */
-    public function addTaskHighBackground($function_name, $workload, $context = null, $unique = null) {}
+    public function addTaskHighBackground($function_name, $workload, $context = null, $unique = null)
+    {
+    }
 
     /**
      * Adds a low priority background task to be run in parallel with other tasks. Call
@@ -1683,7 +1925,9 @@ class GearmanClient {
      * @param string $unique
      * @return GearmanTask A GearmanTask object or false if the task could not be added
      */
-    public function addTaskLowBackground($function_name, $workload, $context = null, $unique = null) {}
+    public function addTaskLowBackground($function_name, $workload, $context = null, $unique = null)
+    {
+    }
 
     /**
      * Used to request status information from the Gearman server, which will call the
@@ -1695,7 +1939,9 @@ class GearmanClient {
      *        reference to an array or object
      * @return GearmanTask A GearmanTask object
      */
-    public function addTaskStatus($job_handle, $context = null) {}
+    public function addTaskStatus($job_handle, $context = null)
+    {
+    }
 
     /**
      * Sets a function to be called when a worker needs to send back data prior to job
@@ -1707,7 +1953,9 @@ class GearmanClient {
      * @param callback $callback A function to call
      * @return bool
      */
-    public function setWorkloadCallback($callback) {}
+    public function setWorkloadCallback($callback)
+    {
+    }
 
     /**
      * Sets a function to be called when a task is received and queued by the Gearman
@@ -1717,7 +1965,9 @@ class GearmanClient {
      * @param string $callback A function to call
      * @return bool
      */
-    public function setCreatedCallback($callback) {}
+    public function setCreatedCallback($callback)
+    {
+    }
 
     /**
      * Sets the callback function for accepting data packets for a task. The callback
@@ -1727,7 +1977,9 @@ class GearmanClient {
      * @param callback $callback A function or method to call
      * @return bool
      */
-    public function setDataCallback($callback) {}
+    public function setDataCallback($callback)
+    {
+    }
 
     /**
      * Sets a function to be called when a worker sends a warning. The callback should
@@ -1737,7 +1989,9 @@ class GearmanClient {
      * @param callback $callback A function to call
      * @return bool
      */
-    public function setWarningCallback($callback) {}
+    public function setWarningCallback($callback)
+    {
+    }
 
     /**
      * Sets a callback function used for getting updated status information from a
@@ -1747,7 +2001,9 @@ class GearmanClient {
      * @param callback $callback A function to call
      * @return bool
      */
-    public function setStatusCallback($callback) {}
+    public function setStatusCallback($callback)
+    {
+    }
 
     /**
      * Use to set a function to be called when a task is completed. The callback
@@ -1757,7 +2013,9 @@ class GearmanClient {
      * @param callback $callback A function to be called
      * @return bool
      */
-    public function setCompleteCallback($callback) {}
+    public function setCompleteCallback($callback)
+    {
+    }
 
     /**
      * Specifies a function to call when a worker for a task sends an exception.
@@ -1766,7 +2024,9 @@ class GearmanClient {
      * @param callback $callback Function to call when the worker throws an exception
      * @return bool
      */
-    public function setExceptionCallback($callback) {}
+    public function setExceptionCallback($callback)
+    {
+    }
 
     /**
      * Sets the callback function to be used when a task does not complete
@@ -1776,7 +2036,9 @@ class GearmanClient {
      * @param callback $callback A function to call
      * @return bool
      */
-    public function setFailCallback($callback) {}
+    public function setFailCallback($callback)
+    {
+    }
 
     /**
      * Clears all the task callback functions that have previously been set.
@@ -1784,7 +2046,9 @@ class GearmanClient {
      * @link http://php.net/manual/en/gearmanclient.clearcallbacks.php
      * @return bool Always returns true
      */
-    public function clearCallbacks() {}
+    public function clearCallbacks()
+    {
+    }
 
     /**
      * For a set of tasks previously added with GearmanClient::addTask,
@@ -1796,7 +2060,9 @@ class GearmanClient {
      * @link http://php.net/manual/en/gearmanclient.runtasks.php
      * @return bool
      */
-    public function runTasks() {}
+    public function runTasks()
+    {
+    }
 }
 
 
@@ -1804,14 +2070,17 @@ class GearmanClient {
  * Class: GearmanTask
  *
  */
-class GearmanTask {
+class GearmanTask
+{
     /**
      * Returns the last Gearman return code for this task.
      *
      * @link http://php.net/manual/en/gearmantask.returncode.php
      * @return int A valid Gearman return code
      */
-    public function returnCode() {}
+    public function returnCode()
+    {
+    }
 
     /**
      * Returns the name of the function this task is associated with, i.e., the
@@ -1820,7 +2089,9 @@ class GearmanTask {
      * @link http://php.net/manual/en/gearmantask.functionname.php
      * @return string A function name
      */
-    public function functionName() {}
+    public function functionName()
+    {
+    }
 
     /**
      * Returns the unique identifier for this task. This is assigned by the
@@ -1830,7 +2101,9 @@ class GearmanTask {
      * @link http://php.net/manual/en/gearmantask.unique.php
      * @return string The unique identifier, or false if no identifier is assigned
      */
-    public function unique() {}
+    public function unique()
+    {
+    }
 
     /**
      * Returns the job handle for this task.
@@ -1838,7 +2111,9 @@ class GearmanTask {
      * @link http://php.net/manual/en/gearmantask.jobhandle.php
      * @return string The opaque job handle
      */
-    public function jobHandle() {}
+    public function jobHandle()
+    {
+    }
 
     /**
      * Gets the status information for whether or not this task is known to the job
@@ -1847,7 +2122,9 @@ class GearmanTask {
      * @link http://php.net/manual/en/gearmantask.isknown.php
      * @return bool true if the task is known, false otherwise
      */
-    public function isKnown() {}
+    public function isKnown()
+    {
+    }
 
     /**
      * Indicates whether or not this task is currently running.
@@ -1855,7 +2132,9 @@ class GearmanTask {
      * @link http://php.net/manual/en/gearmantask.isrunning.php
      * @return bool true if the task is running, false otherwise
      */
-    public function isRunning() {}
+    public function isRunning()
+    {
+    }
 
     /**
      * Returns the numerator of the percentage of the task that is complete expressed
@@ -1864,7 +2143,9 @@ class GearmanTask {
      * @link http://php.net/manual/en/gearmantask.tasknumerator.php
      * @return int A number between 0 and 100, or false if cannot be determined
      */
-    public function taskNumerator() {}
+    public function taskNumerator()
+    {
+    }
 
     /**
      * Returns the denominator of the percentage of the task that is complete expressed
@@ -1873,7 +2154,9 @@ class GearmanTask {
      * @link http://php.net/manual/en/gearmantask.taskdenominator.php
      * @return int A number between 0 and 100, or false if cannot be determined
      */
-    public function taskDenominator() {}
+    public function taskDenominator()
+    {
+    }
 
     /**
      * .
@@ -1882,7 +2165,9 @@ class GearmanTask {
      * @param string $data Data to send to the worker
      * @return int The length of data sent, or false if the send failed
      */
-    public function sendWorkload($data) {}
+    public function sendWorkload($data)
+    {
+    }
 
     /**
      * Returns data being returned for a task by a worker.
@@ -1890,7 +2175,9 @@ class GearmanTask {
      * @link http://php.net/manual/en/gearmantask.data.php
      * @return string The serialized data, or false if no data is present
      */
-    public function data() {}
+    public function data()
+    {
+    }
 
     /**
      * Returns the size of the data being returned for a task.
@@ -1898,7 +2185,9 @@ class GearmanTask {
      * @link http://php.net/manual/en/gearmantask.datasize.php
      * @return int The data size, or false if there is no data
      */
-    public function dataSize() {}
+    public function dataSize()
+    {
+    }
 
     /**
      * .
@@ -1908,7 +2197,9 @@ class GearmanTask {
      * @return array An array whose first element is the length of data read and the second is
      *         the data buffer. Returns false if the read failed
      */
-    public function recvData($data_len) {}
+    public function recvData($data_len)
+    {
+    }
 }
 
 
@@ -1916,7 +2207,8 @@ class GearmanTask {
  * Class: GearmanWorker
  *
  */
-class GearmanWorker {
+class GearmanWorker
+{
     /**
      * Creates a GearmanWorker instance representing a worker that connects to the job
      * server and accepts tasks to run.
@@ -1924,7 +2216,9 @@ class GearmanWorker {
      * @link http://php.net/manual/en/gearmanworker.construct.php
      * @return  A GearmanWorker object
      */
-    public function __construct() {}
+    public function __construct()
+    {
+    }
 
     /**
      * Returns the last Gearman return code.
@@ -1932,7 +2226,9 @@ class GearmanWorker {
      * @link http://php.net/manual/en/gearmanworker.returncode.php
      * @return int A valid Gearman return code
      */
-    public function returnCode() {}
+    public function returnCode()
+    {
+    }
 
     /**
      * Returns an error string for the last error encountered.
@@ -1940,7 +2236,9 @@ class GearmanWorker {
      * @link http://php.net/manual/en/gearmanworker.error.php
      * @return string An error string
      */
-    public function error() {}
+    public function error()
+    {
+    }
 
     /**
      * Returns the value of errno in the case of a GEARMAN_ERRNO return value.
@@ -1948,7 +2246,9 @@ class GearmanWorker {
      * @link http://php.net/manual/en/gearmanworker.geterrno.php
      * @return int A valid errno
      */
-    public function getErrno() {}
+    public function getErrno()
+    {
+    }
 
     /**
      * Gets the options previously set for the worker.
@@ -1956,7 +2256,9 @@ class GearmanWorker {
      * @link http://php.net/manual/en/gearmanworker.options.php
      * @return int The options currently set for the worker
      */
-    public function options() {}
+    public function options()
+    {
+    }
 
     /**
      * Sets one or more options to the supplied value.
@@ -1965,7 +2267,9 @@ class GearmanWorker {
      * @param int $option The options to be set
      * @return bool Always returns true
      */
-    public function setOptions($option) {}
+    public function setOptions($option)
+    {
+    }
 
     /**
      * Adds one or more options to the options previously set.
@@ -1974,7 +2278,9 @@ class GearmanWorker {
      * @param int $option The options to be added
      * @return bool Always returns true
      */
-    public function addOptions($option) {}
+    public function addOptions($option)
+    {
+    }
 
     /**
      * Removes (unsets) one or more worker options.
@@ -1983,7 +2289,9 @@ class GearmanWorker {
      * @param int $option The options to be removed (unset)
      * @return bool Always returns true
      */
-    public function removeOptions($option) {}
+    public function removeOptions($option)
+    {
+    }
 
     /**
      * Returns the current time to wait, in milliseconds, for socket I/O activity.
@@ -1992,7 +2300,9 @@ class GearmanWorker {
      * @return int A time period is milliseconds. A negative value indicates an infinite
      *         timeout
      */
-    public function timeout() {}
+    public function timeout()
+    {
+    }
 
     /**
      * Sets the interval of time to wait for socket I/O activity.
@@ -2002,7 +2312,9 @@ class GearmanWorker {
      *        indicates an infinite timeout
      * @return bool Always returns true
      */
-    public function setTimeout($timeout) {}
+    public function setTimeout($timeout)
+    {
+    }
 
     /**
      * Give the worker an identifier so it can be tracked when asking gearmand for
@@ -2012,7 +2324,9 @@ class GearmanWorker {
      * @param int $id A string identifier
      * @return bool Returns TRUE on success or FALSE on failure
      */
-    public function setId($id) {}
+    public function setId($id)
+    {
+    }
 
     /**
      * Adds a job server to this worker. This goes into a list of servers than can be
@@ -2023,7 +2337,9 @@ class GearmanWorker {
      * @param int $port
      * @return bool
      */
-    public function addServer($host = '127.0.0.1', $port = 4730) {}
+    public function addServer($host = '127.0.0.1', $port = 4730)
+    {
+    }
 
     /**
      * Adds one or more job servers to this worker. These go into a list of servers
@@ -2034,7 +2350,9 @@ class GearmanWorker {
      *        host:port. If no port is specified, it defaults to 4730
      * @return bool
      */
-    public function addServers($servers = '127.0.0.1:4730') {}
+    public function addServers($servers = '127.0.0.1:4730')
+    {
+    }
 
     /**
      * Causes the worker to wait for activity from one of the Gearman job servers when
@@ -2044,7 +2362,9 @@ class GearmanWorker {
      * @link http://php.net/manual/en/gearmanworker.wait.php
      * @return bool
      */
-    public function wait() {}
+    public function wait()
+    {
+    }
 
     /**
      * Registers a function name with the job server with an optional timeout. The
@@ -2057,7 +2377,9 @@ class GearmanWorker {
      * @param int $timeout An interval of time in seconds
      * @return bool A standard Gearman return value
      */
-    public function register($function_name, $timeout) {}
+    public function register($function_name, $timeout)
+    {
+    }
 
     /**
      * Unregisters a function name with the job servers ensuring that no more jobs (for
@@ -2068,7 +2390,9 @@ class GearmanWorker {
      *        server
      * @return bool A standard Gearman return value
      */
-    public function unregister($function_name) {}
+    public function unregister($function_name)
+    {
+    }
 
     /**
      * Unregisters all previously registered functions, ensuring that no more jobs are
@@ -2077,11 +2401,15 @@ class GearmanWorker {
      * @link http://php.net/manual/en/gearmanworker.unregisterall.php
      * @return bool A standard Gearman return value
      */
-    public function unregisterAll() {}
+    public function unregisterAll()
+    {
+    }
 
     /**
-       */
-    public function grabJob() {}
+     */
+    public function grabJob()
+    {
+    }
 
     /**
      * Registers a function name with the job server and specifies a callback
@@ -2098,7 +2426,9 @@ class GearmanWorker {
      * @param int $timeout An interval of time in seconds
      * @return bool
      */
-    public function addFunction($function_name, $function, $context = null, $timeout = 0) {}
+    public function addFunction($function_name, $function, $context = null, $timeout = 0)
+    {
+    }
 
     /**
      * Waits for a job to be assigned and then calls the appropriate callback function.
@@ -2108,7 +2438,9 @@ class GearmanWorker {
      * @link http://php.net/manual/en/gearmanworker.work.php
      * @return bool
      */
-    public function work() {}
+    public function work()
+    {
+    }
 
 }
 
@@ -2117,14 +2449,17 @@ class GearmanWorker {
  * Class: GearmanJob
  *
  */
-class GearmanJob {
+class GearmanJob
+{
     /**
      * Returns the last return code issued by the job server.
      *
      * @link http://php.net/manual/en/gearmanjob.returncode.php
      * @return int A valid Gearman return code
      */
-    public function returnCode() {}
+    public function returnCode()
+    {
+    }
 
     /**
      * Sets the return value for this job, indicates how the job completed.
@@ -2133,7 +2468,9 @@ class GearmanJob {
      * @param string $gearman_return_t A valid Gearman return value
      * @return bool Description
      */
-    public function setReturn($gearman_return_t) {}
+    public function setReturn($gearman_return_t)
+    {
+    }
 
     /**
      * Sends data to the job server (and any listening clients) for this job.
@@ -2142,7 +2479,9 @@ class GearmanJob {
      * @param string $data Arbitrary serialized data
      * @return bool
      */
-    public function sendData($data) {}
+    public function sendData($data)
+    {
+    }
 
     /**
      * Sends a warning for this job while it is running.
@@ -2151,7 +2490,9 @@ class GearmanJob {
      * @param string $warning A warning messages
      * @return bool
      */
-    public function sendWarning($warning) {}
+    public function sendWarning($warning)
+    {
+    }
 
     /**
      * Sends status information to the job server and any listening clients. Use this
@@ -2164,7 +2505,9 @@ class GearmanJob {
      *        a fraction
      * @return bool
      */
-    public function sendStatus($numerator, $denominator) {}
+    public function sendStatus($numerator, $denominator)
+    {
+    }
 
     /**
      * Sends result data and the complete status update for this job.
@@ -2173,7 +2516,9 @@ class GearmanJob {
      * @param string $result Serialized result data
      * @return bool
      */
-    public function sendComplete($result) {}
+    public function sendComplete($result)
+    {
+    }
 
     /**
      * Sends the supplied exception when this job is running.
@@ -2182,7 +2527,9 @@ class GearmanJob {
      * @param string $exception An exception description
      * @return bool
      */
-    public function sendException($exception) {}
+    public function sendException($exception)
+    {
+    }
 
     /**
      * Sends failure status for this job, indicating that the job failed in a known way
@@ -2191,7 +2538,9 @@ class GearmanJob {
      * @link http://php.net/manual/en/gearmanjob.sendfail.php
      * @return bool
      */
-    public function sendFail() {}
+    public function sendFail()
+    {
+    }
 
     /**
      * Returns the opaque job handle assigned by the job server.
@@ -2199,7 +2548,9 @@ class GearmanJob {
      * @link http://php.net/manual/en/gearmanjob.handle.php
      * @return string An opaque job handle
      */
-    public function handle() {}
+    public function handle()
+    {
+    }
 
     /**
      * Returns the function name for this job. This is the function the work will
@@ -2208,7 +2559,9 @@ class GearmanJob {
      * @link http://php.net/manual/en/gearmanjob.functionname.php
      * @return string The name of a function
      */
-    public function functionName() {}
+    public function functionName()
+    {
+    }
 
     /**
      * Returns the unique identifiter for this job. The identifier is assigned by the
@@ -2217,7 +2570,9 @@ class GearmanJob {
      * @link http://php.net/manual/en/gearmanjob.unique.php
      * @return string An opaque unique identifier
      */
-    public function unique() {}
+    public function unique()
+    {
+    }
 
     /**
      * Returns the workload for the job. This is serialized data that is to be
@@ -2226,7 +2581,9 @@ class GearmanJob {
      * @link http://php.net/manual/en/gearmanjob.workload.php
      * @return string Serialized data
      */
-    public function workload() {}
+    public function workload()
+    {
+    }
 
     /**
      * Returns the size of the job's work load (the data the worker is to process) in
@@ -2235,7 +2592,9 @@ class GearmanJob {
      * @link http://php.net/manual/en/gearmanjob.workloadsize.php
      * @return int The size in bytes
      */
-    public function workloadSize() {}
+    public function workloadSize()
+    {
+    }
 }
 
 
@@ -2246,7 +2605,8 @@ class GearmanJob {
  * @property-read  $ Prop description
  * @property-read  $ Prop description
  */
-class GearmanException extends Exception {
+class GearmanException extends Exception
+{
     /**
      * Prop description.
      *

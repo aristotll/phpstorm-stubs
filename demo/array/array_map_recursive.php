@@ -9,7 +9,7 @@
 
 function array_map_recursive(callable $func, array $array)
 {
-    return filter_var($array, FILTER_CALLBACK, ['options' => $func]);//这个看不懂...
+    return filter_var($array, FILTER_CALLBACK, ['options' => $func]);// 貌似就是 recursive array map 原因不知
 }
 
 var_dump(array_map_recursive(function ($value) {

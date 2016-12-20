@@ -23,7 +23,9 @@
  * @since 4.0
  * @since 5.0
  */
-function session_name ($name = null) {}
+function session_name($name = null)
+{
+}
 
 /**
  * Get and/or set the current session module
@@ -36,7 +38,9 @@ function session_name ($name = null) {}
  * @since 4.0
  * @since 5.0
  */
-function session_module_name ($module = null) {}
+function session_module_name($module = null)
+{
+}
 
 /**
  * Get and/or set the current session save path
@@ -57,7 +61,9 @@ function session_module_name ($module = null) {}
  * @since 4.0
  * @since 5.0
  */
-function session_save_path ($path = null) {}
+function session_save_path($path = null)
+{
+}
 
 /**
  * Get and/or set the current session id
@@ -80,7 +86,9 @@ function session_save_path ($path = null) {}
  * @since 4.0
  * @since 5.0
  */
-function session_id ($id = null) {}
+function session_id($id = null)
+{
+}
 
 /**
  * Update the current session id with a newly generated one
@@ -92,14 +100,18 @@ function session_id ($id = null) {}
  * @since 4.3.2
  * @since 5.0
  */
-function session_regenerate_id ($delete_old_session = false) {}
+function session_regenerate_id($delete_old_session = false)
+{
+}
 
 /**
  * PHP > 5.4.0 <br/>
  * Session shutdown function
  * @link http://www.php.net/manual/en/function.session-register-shutdown.php
  */
-function session_register_shutdown  () {}
+function session_register_shutdown()
+{
+}
 
 /**
  * Decodes session data from a string
@@ -111,7 +123,9 @@ function session_register_shutdown  () {}
  * @since 4.0
  * @since 5.0
  */
-function session_decode ($data) {}
+function session_decode($data)
+{
+}
 
 /**
  * Register one or more global variables with the current session
@@ -126,7 +140,9 @@ function session_decode ($data) {}
  * @since 4.0
  * @since 5.0
  */
-function session_register ($name, $_ = null) {}
+function session_register($name, $_ = null)
+{
+}
 
 /**
  * Unregister a global variable from the current session
@@ -139,7 +155,9 @@ function session_register ($name, $_ = null) {}
  * @since 4.0
  * @since 5.0
  */
-function session_unregister ($name) {}
+function session_unregister($name)
+{
+}
 
 /**
  * Find out whether a global variable is registered in a session
@@ -154,7 +172,9 @@ function session_unregister ($name) {}
  * @since 4.0
  * @since 5.0
  */
-function session_is_registered ($name) {}
+function session_is_registered($name)
+{
+}
 
 /**
  * Encodes the current session data as a string
@@ -163,7 +183,9 @@ function session_is_registered ($name) {}
  * @since 4.0
  * @since 5.0
  */
-function session_encode () {}
+function session_encode()
+{
+}
 
 /**
  * Initialize session data
@@ -176,7 +198,9 @@ function session_encode () {}
  * @since 5.0
  * @since 7.0
  */
-function session_start ($options = []) {}
+function session_start($options = [])
+{
+}
 
 /**
  * Create new session id
@@ -186,14 +210,18 @@ function session_start ($options = []) {}
  * @return string new collision free session id for the current session.
  * If it is used without active session, it omits collision check.
  */
-function session_create_id($prefix) {}
+function session_create_id($prefix)
+{
+}
 
 /**
  * Perform session data garbage collection
  * @return int number of deleted session data for success, FALSE for failure.
  * @since 7.1
  */
-function session_gc() {}
+function session_gc()
+{
+}
 
 /**
  * Destroys all data registered to a session
@@ -202,7 +230,9 @@ function session_gc() {}
  * @since 4.0
  * @since 5.0
  */
-function session_destroy () {}
+function session_destroy()
+{
+}
 
 /**
  * Free all session variables
@@ -211,7 +241,9 @@ function session_destroy () {}
  * @since 4.0
  * @since 5.0
  */
-function session_unset () {}
+function session_unset()
+{
+}
 
 /**
  * Sets user-level session storage functions
@@ -261,7 +293,9 @@ function session_unset () {}
  * @since 4.0
  * @since 5.0
  */
-function session_set_save_handler ($open, $close, $read, $write, $destroy, $gc, $create_sid) {}
+function session_set_save_handler($open, $close, $read, $write, $destroy, $gc, $create_sid)
+{
+}
 
 /**
  * (PHP 5.4)<br/>
@@ -273,7 +307,9 @@ function session_set_save_handler ($open, $close, $read, $write, $destroy, $gc, 
  * @param bool $register_shutdown [optional] Register session_write_close() as a register_shutdown_function() function.
  * @return bool true on success or false on failure.
  */
-function session_set_save_handler (SessionHandlerInterface $session_handler, $register_shutdown = true) {}
+function session_set_save_handler(SessionHandlerInterface $session_handler, $register_shutdown = true)
+{
+}
 
 /**
  * Get and/or set the current cache limiter
@@ -333,7 +369,9 @@ function session_set_save_handler (SessionHandlerInterface $session_handler, $re
  * @since 5.0
  * @since 7.0
  */
-function session_cache_limiter ($cache_limiter = null) {}
+function session_cache_limiter($cache_limiter = null)
+{
+}
 
 /**
  * Return current cache expire
@@ -353,7 +391,9 @@ function session_cache_limiter ($cache_limiter = null) {}
  * @since 5.0
  * @since 7.0
  */
-function session_cache_expire ($new_cache_expire = null) {}
+function session_cache_expire($new_cache_expire = null)
+{
+}
 
 /**
  * Set the session cookie parameters
@@ -385,7 +425,9 @@ function session_cache_expire ($new_cache_expire = null) {}
  * @since 4.0
  * @since 5.0
  */
-function session_set_cookie_params ($lifetime, $path = null, $domain = null, $secure = false, $httponly = false) {}
+function session_set_cookie_params($lifetime, $path = null, $domain = null, $secure = false, $httponly = false)
+{
+}
 
 /**
  * Get the session cookie parameters
@@ -405,7 +447,9 @@ function session_set_cookie_params ($lifetime, $path = null, $domain = null, $se
  * @since 4.0
  * @since 5.0
  */
-function session_get_cookie_params () {}
+function session_get_cookie_params()
+{
+}
 
 /**
  * Write session data and end session
@@ -414,7 +458,9 @@ function session_get_cookie_params () {}
  * @since 4.0.4
  * @since 5.0
  */
-function session_write_close () {}
+function session_write_close()
+{
+}
 
 /**
  * Alias of <b>session_write_close</b>
@@ -422,7 +468,9 @@ function session_write_close () {}
  * @since 4.4.0
  * @since 5.0
  */
-function session_commit () {}
+function session_commit()
+{
+}
 
 /**
  * (PHP 5 >= 5.4.0)<br>
@@ -432,7 +480,9 @@ function session_commit () {}
  * <b>PHP_SESSION_NONE</b> if sessions are enabled, but none exists.
  * <b>PHP_SESSION_ACTIVE</b> if sessions are enabled, and one exists.
  */
-function session_status () {}
+function session_status()
+{
+}
 
 /**
  * (PHP 5 >= 5.6.0)<br>
@@ -440,7 +490,9 @@ function session_status () {}
  * @link http://php.net/manual/en/function.session-abort.php
  * @return bool true if a session was successfully reinitialized or false on failure.
  */
-function session_abort() {}
+function session_abort()
+{
+}
 
 /**
  * (PHP 5 >= 5.6.0)<br>
@@ -448,7 +500,9 @@ function session_abort() {}
  * @link http://php.net/manual/en/function.session-reset.php
  * @return bool true if a session was successfully reinitialized or false on failure.
  */
-function session_reset() {}
+function session_reset()
+{
+}
 
 // End of session v.
 ?>

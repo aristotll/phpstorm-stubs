@@ -3,220 +3,12 @@
 // Start of SPL v.0.2
 
 /**
- * Exception that represents error in the program logic. This kind of
- * exceptions should directly lead to a fix in your code.
- * @link http://php.net/manual/en/class.logicexception.php
- */
-class LogicException extends Exception {
-}
-
-/**
- * Exception thrown if a callback refers to an undefined function or if some
- * arguments are missing.
- * @link http://php.net/manual/en/class.badfunctioncallexception.php
- */
-class BadFunctionCallException extends LogicException {
-}
-
-/**
- * Exception thrown if a callback refers to an undefined method or if some
- * arguments are missing.
- * @link http://php.net/manual/en/class.badmethodcallexception.php
- */
-class BadMethodCallException extends BadFunctionCallException {
-}
-
-/**
- * Exception thrown if a value does not adhere to a defined valid data domain.
- * @link http://php.net/manual/en/class.domainexception.php
- */
-class DomainException extends LogicException {
-}
-
-/**
- * Exception thrown if an argument does not match with the expected value.
- * @link http://php.net/manual/en/class.invalidargumentexception.php
- */
-class InvalidArgumentException extends LogicException {
-}
-
-/**
- * Exception thrown if a length is invalid.
- * @link http://php.net/manual/en/class.lengthexception.php
- */
-class LengthException extends LogicException {
-}
-
-/**
- * Exception thrown when an illegal index was requested. This represents
- * errors that should be detected at compile time.
- * @link http://php.net/manual/en/class.outofrangeexception.php
- */
-class OutOfRangeException extends LogicException {
-}
-
-/**
- * Exception thrown if an error which can only be found on runtime occurs.
- * @link http://php.net/manual/en/class.runtimeexception.php
- */
-class RuntimeException extends Exception {
-}
-
-/**
- * Exception thrown if a value is not a valid key. This represents errors
- * that cannot be detected at compile time.
- * @link http://php.net/manual/en/class.outofboundsexception.php
- */
-class OutOfBoundsException extends RuntimeException {
-}
-
-/**
- * Exception thrown when you add an element into a full container.
- * @link http://php.net/manual/en/class.overflowexception.php
- */
-class OverflowException extends RuntimeException {
-}
-
-/**
- * Exception thrown to indicate range errors during program execution.
- * Normally this means there was an arithmetic error other than
- * under/overflow. This is the runtime version of
- * <b>DomainException</b>.
- * @link http://php.net/manual/en/class.rangeexception.php
- */
-class RangeException extends RuntimeException {
-}
-
-/**
- * Exception thrown when you try to remove an element of an empty container.
- * @link http://php.net/manual/en/class.underflowexception.php
- */
-class UnderflowException extends RuntimeException {
-}
-
-/**
- * Exception thrown if a value does not match with a set of values. Typically
- * this happens when a function calls another function and expects the return
- * value to be of a certain type or value not including arithmetic or buffer
- * related errors.
- * @link http://php.net/manual/en/class.unexpectedvalueexception.php
- */
-class UnexpectedValueException extends RuntimeException {
-}
-
-/**
- * The EmptyIterator class for an empty iterator.
- * @link http://www.php.net/manual/en/class.emptyiterator.php
- */
-class EmptyIterator implements Iterator, Traversable {
-
-    /**
-     * Return the current element
-     * @link http://php.net/manual/en/iterator.current.php
-     * @return mixed Can return any type.
-     * @since 5.0.0
-     */
-    public function current() { }
-
-    /**
-     * Move forward to next element
-     * @link http://php.net/manual/en/iterator.next.php
-     * @return void Any returned value is ignored.
-     * @since 5.0.0
-     */
-    public function next() { }
-
-    /**
-     * Return the key of the current element
-     * @link http://php.net/manual/en/iterator.key.php
-     * @return mixed scalar on success, or null on failure.
-     * @since 5.0.0
-     */
-    public function key() { }
-
-    /**
-     * Checks if current position is valid
-     * @link http://php.net/manual/en/iterator.valid.php
-     * @return boolean The return value will be casted to boolean and then evaluated.
-     * Returns true on success or false on failure.
-     * @since 5.0.0
-     */
-    public function valid() { }
-
-    /**
-     * Rewind the Iterator to the first element
-     * @link http://php.net/manual/en/iterator.rewind.php
-     * @return void Any returned value is ignored.
-     * @since 5.0.0
-     */
-    public function rewind() { }
-}
-
-/**
- * Filtered iterator using the callback to determine which items are accepted or rejected.
- * @link http://www.php.net/manual/en/class.callbackfilteriterator.php
- * @since 5.4.0
- */
-class CallbackFilterIterator extends FilterIterator implements Iterator , Traversable , OuterIterator {
-
-    /**
-     * Creates a filtered iterator using the callback to determine which items are accepted or rejected.
-     * @param Iterator $iterator The iterator to be filtered.
-     * @param callable $callback The callback, which should return TRUE to accept the current item or FALSE otherwise.
-     * May be any valid callable value.
-     * The callback should accept up to three arguments: the current item, the current key and the iterator, respectively.
-     * <code> function my_callback($current, $key, $iterator) </code>
-     * @link http://www.php.net/manual/en/callbackfilteriterator.construct.php
-     */
-    function __construct(Iterator $iterator , callable $callback) { }
-
-    /**
-     * This method calls the callback with the current value, current key and the inner iterator.
-     * The callback is expected to return TRUE if the current item is to be accepted, or FALSE otherwise.
-     * @link http://www.php.net/manual/en/callbackfilteriterator.accept.php
-     * @return bool true if the current element is acceptable, otherwise false.
-     */
-    public function accept() { }
-}
-
-/**
- * (PHP 5 >= 5.4.0)<br>
- * RecursiveCallbackFilterIterator from a RecursiveIterator
- * @link http://www.php.net/manual/en/class.recursivecallbackfilteriterator.php
- */
-class RecursiveCallbackFilterIterator extends CallbackFilterIterator implements OuterIterator , Traversable , Iterator , RecursiveIterator {
-
-    /**
-     * Create a RecursiveCallbackFilterIterator from a RecursiveIterator
-     * @param RecursiveIterator $iterator The recursive iterator to be filtered.
-     * @param string $callback The callback, which should return TRUE to accept the current item or FALSE otherwise. See Examples.
-     * May be any valid callable value.
-     * @link http://www.php.net/manual/en/recursivecallbackfilteriterator.getchildren.php
-     */
-    function __construct( RecursiveIterator $iterator, $callback ) { }
-
-    /**
-     * Check whether the inner iterator's current element has children
-     * @link http://php.net/manual/en/recursiveiterator.haschildren.php
-     * @return bool Returns TRUE if the current element has children, FALSE otherwise.
-     */
-    public function hasChildren() { }
-
-    /**
-     * Returns an iterator for the current entry.
-     * @link http://www.php.net/manual/en/recursivecallbackfilteriterator.haschildren.php
-     * @return RecursiveCallbackFilterIterator containing the children.
-     */
-    public function getChildren() { }
-
-}
-
-/**
  * Classes implementing <b>RecursiveIterator</b> can be used to iterate
  * over iterators recursively.
  * @link http://php.net/manual/en/class.recursiveiterator.php
  */
-interface RecursiveIterator extends Iterator, Traversable {
+interface RecursiveIterator extends Iterator, Traversable
+{
 
     /**
      * Returns if an iterator can be created for the current entry.
@@ -236,173 +28,12 @@ interface RecursiveIterator extends Iterator, Traversable {
 }
 
 /**
- * Can be used to iterate through recursive iterators.
- * @link http://php.net/manual/en/class.recursiveiteratoriterator.php
- */
-class RecursiveIteratorIterator implements Iterator, Traversable, OuterIterator {
-    const LEAVES_ONLY = 0;
-    const SELF_FIRST = 1;
-    const CHILD_FIRST = 2;
-    const CATCH_GET_CHILD = 16;
-
-    /**
-     * Construct a RecursiveIteratorIterator
-     * @link http://php.net/manual/en/recursiveiteratoriterator.construct.php
-     * @param Traversable $iterator
-     * @param $mode [optional]
-     * @param $flags [optional]
-     * @since 5.1.3
-     */
-    public function __construct(Traversable $iterator, $mode, $flags) { }
-
-    /**
-     * Rewind the iterator to the first element of the top level inner iterator
-     * @link http://php.net/manual/en/recursiveiteratoriterator.rewind.php
-     * @return void
-     * @since 5.0
-     */
-    public function rewind() { }
-
-    /**
-     * Check whether the current position is valid
-     * @link http://php.net/manual/en/recursiveiteratoriterator.valid.php
-     * @return bool true if the current position is valid, otherwise false
-     * @since 5.0
-     */
-    public function valid() { }
-
-    /**
-     * Access the current key
-     * @link http://php.net/manual/en/recursiveiteratoriterator.key.php
-     * @return mixed The current key.
-     * @since 5.0
-     */
-    public function key() { }
-
-    /**
-     * Access the current element value
-     * @link http://php.net/manual/en/recursiveiteratoriterator.current.php
-     * @return mixed The current elements value.
-     * @since 5.0
-     */
-    public function current() { }
-
-    /**
-     * Move forward to the next element
-     * @link http://php.net/manual/en/recursiveiteratoriterator.next.php
-     * @return void
-     * @since 5.0
-     */
-    public function next() { }
-
-    /**
-     * Get the current depth of the recursive iteration
-     * @link http://php.net/manual/en/recursiveiteratoriterator.getdepth.php
-     * @return int The current depth of the recursive iteration.
-     * @since 5.0
-     */
-    public function getDepth() { }
-
-    /**
-     * The current active sub iterator
-     * @link http://php.net/manual/en/recursiveiteratoriterator.getsubiterator.php
-     * @param $level [optional]
-     * @return RecursiveIterator The current active sub iterator.
-     * @since 5.0
-     */
-    public function getSubIterator($level) { }
-
-    /**
-     * Get inner iterator
-     * @link http://php.net/manual/en/recursiveiteratoriterator.getinneriterator.php
-     * @return Iterator The current active sub iterator.
-     * @since 5.1.0
-     */
-    public function getInnerIterator() { }
-
-    /**
-     * Begin Iteration
-     * @link http://php.net/manual/en/recursiveiteratoriterator.beginiteration.php
-     * @return void
-     * @since 5.1.0
-     */
-    public function beginIteration() { }
-
-    /**
-     * End Iteration
-     * @link http://php.net/manual/en/recursiveiteratoriterator.enditeration.php
-     * @return void
-     * @since 5.1.0
-     */
-    public function endIteration() { }
-
-    /**
-     * Has children
-     * @link http://php.net/manual/en/recursiveiteratoriterator.callhaschildren.php
-     * @return bool true if the element has children, otherwise false
-     * @since 5.1.0
-     */
-    public function callHasChildren() { }
-
-    /**
-     * Get children
-     * @link http://php.net/manual/en/recursiveiteratoriterator.callgetchildren.php
-     * @return RecursiveIterator A <b>RecursiveIterator</b>.
-     * @since 5.1.0
-     */
-    public function callGetChildren() { }
-
-    /**
-     * Begin children
-     * @link http://php.net/manual/en/recursiveiteratoriterator.beginchildren.php
-     * @return void
-     * @since 5.1.0
-     */
-    public function beginChildren() { }
-
-    /**
-     * End children
-     * @link http://php.net/manual/en/recursiveiteratoriterator.endchildren.php
-     * @return void
-     * @since 5.1.0
-     */
-    public function endChildren() { }
-
-    /**
-     * Next element
-     * @link http://php.net/manual/en/recursiveiteratoriterator.nextelement.php
-     * @return void
-     * @since 5.1.0
-     */
-    public function nextElement() { }
-
-    /**
-     * Set max depth
-     * @link http://php.net/manual/en/recursiveiteratoriterator.setmaxdepth.php
-     * @param string $max_depth [optional] <p>
-     * The maximum allowed depth. Default -1 is used
-     * for any depth.
-     * </p>
-     * @return void
-     * @since 5.1.0
-     */
-    public function setMaxDepth($max_depth) { }
-
-    /**
-     * Get max depth
-     * @link http://php.net/manual/en/recursiveiteratoriterator.getmaxdepth.php
-     * @return mixed The maximum accepted depth, or false if any depth is allowed.
-     * @since 5.1.0
-     */
-    public function getMaxDepth() { }
-}
-
-/**
  * Classes implementing <b>OuterIterator</b> can be used to iterate
  * over iterators.
  * @link http://php.net/manual/en/class.outeriterator.php
  */
-interface OuterIterator extends Iterator, Traversable {
+interface OuterIterator extends Iterator, Traversable
+{
 
     /**
      * Returns the inner iterator for the current entry.
@@ -413,226 +44,13 @@ interface OuterIterator extends Iterator, Traversable {
     public function getInnerIterator();
 }
 
-
-/**
- * This iterator wrapper allows the conversion of anything that is
- * Traversable into an Iterator.
- * It is important to understand that most classes that do not implement
- * Iterators have reasons as most likely they do not allow the full
- * Iterator feature set. If so, techniques should be provided to prevent
- * misuse, otherwise expect exceptions or fatal errors.
- * @link http://php.net/manual/en/class.iteratoriterator.php
- */
-class IteratorIterator implements Iterator, Traversable, OuterIterator {
-
-    /**
-     * Create an iterator from anything that is traversable
-     * @link http://php.net/manual/en/iteratoriterator.construct.php
-     * @param Traversable $iterator
-     * @since 5.1.0
-     */
-    public function __construct(Traversable $iterator) { }
-
-    /**
-     * Get the inner iterator
-     * @link http://php.net/manual/en/iteratoriterator.getinneriterator.php
-     * @return Iterator The inner iterator as passed to IteratorIterator::__construct.
-     * @since 5.1.0
-     */
-    public function getInnerIterator() { }
-
-    /**
-     * Rewind to the first element
-     * @link http://php.net/manual/en/iteratoriterator.rewind.php
-     * @return void
-     * @since 5.1.0
-     */
-    public function rewind() { }
-
-    /**
-     * Checks if the iterator is valid
-     * @link http://php.net/manual/en/iteratoriterator.valid.php
-     * @return bool true if the iterator is valid, otherwise false
-     * @since 5.1.0
-     */
-    public function valid() { }
-
-    /**
-     * Get the key of the current element
-     * @link http://php.net/manual/en/iteratoriterator.key.php
-     * @return mixed The key of the current element.
-     * @since 5.1.0
-     */
-    public function key() { }
-
-    /**
-     * Get the current value
-     * @link http://php.net/manual/en/iteratoriterator.current.php
-     * @return mixed The value of the current element.
-     * @since 5.1.0
-     */
-    public function current() { }
-
-    /**
-     * Forward to the next element
-     * @link http://php.net/manual/en/iteratoriterator.next.php
-     * @return void
-     * @since 5.1.0
-     */
-    public function next() { }
-}
-
-/**
- * This abstract iterator filters out unwanted values. This class should be extended to
- * implement custom iterator filters. The <b>FilterIterator::accept</b>
- * must be implemented in the subclass.
- * @link http://php.net/manual/en/class.filteriterator.php
- */
-abstract class FilterIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator {
-
-    /**
-     * Check whether the current element of the iterator is acceptable
-     * @link http://php.net/manual/en/filteriterator.accept.php
-     * @return bool true if the current element is acceptable, otherwise false.
-     * @since 5.1.0
-     */
-    abstract public function accept();
-
-    /**
-     * Construct a filterIterator
-     * @link http://php.net/manual/en/filteriterator.construct.php
-     * @param Iterator $iterator
-     * @since 5.1.0
-     */
-    public function __construct(Iterator $iterator) { }
-
-    /**
-     * Rewind the iterator
-     * @link http://php.net/manual/en/filteriterator.rewind.php
-     * @return void
-     * @since 5.1.0
-     */
-    public function rewind() { }
-
-    /**
-     * Check whether the current element is valid
-     * @link http://php.net/manual/en/filteriterator.valid.php
-     * @return bool true if the current element is valid, otherwise false
-     * @since 5.1.0
-     */
-    public function valid() { }
-
-    /**
-     * Get the current key
-     * @link http://php.net/manual/en/filteriterator.key.php
-     * @return mixed The current key.
-     * @since 5.1.0
-     */
-    public function key() { }
-
-    /**
-     * Get the current element value
-     * @link http://php.net/manual/en/filteriterator.current.php
-     * @return mixed The current element value.
-     * @since 5.1.0
-     */
-    public function current() { }
-
-    /**
-     * Move the iterator forward
-     * @link http://php.net/manual/en/filteriterator.next.php
-     * @return void
-     * @since 5.1.0
-     */
-    public function next() { }
-
-    /**
-     * Get the inner iterator
-     * @link http://php.net/manual/en/filteriterator.getinneriterator.php
-     * @return Iterator The inner iterator.
-     * @since 5.1.0
-     */
-    public function getInnerIterator() { }
-}
-
-/**
- * This abstract iterator filters out unwanted values for a <b>RecursiveIterator</b>.
- * This class should be extended to implement custom filters.
- * The <b>RecursiveFilterIterator::accept</b> must be implemented in the subclass.
- * @link http://php.net/manual/en/class.recursivefilteriterator.php
- */
-abstract class RecursiveFilterIterator extends FilterIterator implements Iterator, Traversable, OuterIterator, RecursiveIterator {
-
-    /**
-     * Create a RecursiveFilterIterator from a RecursiveIterator
-     * @link http://php.net/manual/en/recursivefilteriterator.construct.php
-     * @param RecursiveIterator $iterator
-     * @since 5.1.0
-     */
-    public function __construct(RecursiveIterator $iterator) { }
-
-    /**
-     * Check whether the inner iterator's current element has children
-     * @link http://php.net/manual/en/recursivefilteriterator.haschildren.php
-     * @return bool true if the inner iterator has children, otherwise false
-     * @since 5.1.0
-     */
-    public function hasChildren() { }
-
-    /**
-     * Return the inner iterator's children contained in a RecursiveFilterIterator
-     * @link http://php.net/manual/en/recursivefilteriterator.getchildren.php
-     * @return RecursiveFilterIterator containing the inner iterator's children.
-     * @since 5.1.0
-     */
-    public function getChildren() { }
-}
-
-/**
- * This extended FilterIterator allows a recursive iteration using RecursiveIteratorIterator that only shows those elements which have children.
- * @link http://php.net/manual/en/class.parentiterator.php
- */
-class ParentIterator extends RecursiveFilterIterator implements RecursiveIterator, OuterIterator, Traversable, Iterator {
-
-    /**
-     * Determines acceptability
-     * @link http://php.net/manual/en/parentiterator.accept.php
-     * @return bool true if the current element is acceptable, otherwise false.
-     * @since 5.1.0
-     */
-    public function accept() { }
-
-    /**
-     * Constructs a ParentIterator
-     * @link http://php.net/manual/en/parentiterator.construct.php
-     * @param RecursiveIterator $iterator
-     * @since 5.1.0
-     */
-    public function __construct(RecursiveIterator $iterator) { }
-
-    /**
-     * Check whether the inner iterator's current element has children
-     * @link http://php.net/manual/en/recursivefilteriterator.haschildren.php
-     * @return bool true if the inner iterator has children, otherwise false
-     * @since 5.1.0
-     */
-    public function hasChildren() { }
-
-    /**
-     * Return the inner iterator's children contained in a RecursiveFilterIterator
-     * @link http://php.net/manual/en/recursivefilteriterator.getchildren.php
-     * @return ParentIterator containing the inner iterator's children.
-     * @since 5.1.0
-     */
-    public function getChildren() { }
-}
-
 /**
  * Classes implementing <b>Countable</b> can be used with the
  * <b>count</b> function.
  * @link http://php.net/manual/en/class.countable.php
  */
-interface Countable {
+interface Countable
+{
 
     /**
      * Count elements of an object
@@ -650,7 +68,8 @@ interface Countable {
  * The Seekable iterator.
  * @link http://php.net/manual/en/class.seekableiterator.php
  */
-interface SeekableIterator extends Iterator, Traversable {
+interface SeekableIterator extends Iterator, Traversable
+{
 
     /**
      * Seeks to a position
@@ -665,11 +84,715 @@ interface SeekableIterator extends Iterator, Traversable {
 }
 
 /**
+ * Exception that represents error in the program logic. This kind of
+ * exceptions should directly lead to a fix in your code.
+ * @link http://php.net/manual/en/class.logicexception.php
+ */
+class LogicException extends Exception
+{
+}
+
+/**
+ * Exception thrown if a callback refers to an undefined function or if some
+ * arguments are missing.
+ * @link http://php.net/manual/en/class.badfunctioncallexception.php
+ */
+class BadFunctionCallException extends LogicException
+{
+}
+
+/**
+ * Exception thrown if a callback refers to an undefined method or if some
+ * arguments are missing.
+ * @link http://php.net/manual/en/class.badmethodcallexception.php
+ */
+class BadMethodCallException extends BadFunctionCallException
+{
+}
+
+/**
+ * Exception thrown if a value does not adhere to a defined valid data domain.
+ * @link http://php.net/manual/en/class.domainexception.php
+ */
+class DomainException extends LogicException
+{
+}
+
+/**
+ * Exception thrown if an argument does not match with the expected value.
+ * @link http://php.net/manual/en/class.invalidargumentexception.php
+ */
+class InvalidArgumentException extends LogicException
+{
+}
+
+/**
+ * Exception thrown if a length is invalid.
+ * @link http://php.net/manual/en/class.lengthexception.php
+ */
+class LengthException extends LogicException
+{
+}
+
+/**
+ * Exception thrown when an illegal index was requested. This represents
+ * errors that should be detected at compile time.
+ * @link http://php.net/manual/en/class.outofrangeexception.php
+ */
+class OutOfRangeException extends LogicException
+{
+}
+
+/**
+ * Exception thrown if an error which can only be found on runtime occurs.
+ * @link http://php.net/manual/en/class.runtimeexception.php
+ */
+class RuntimeException extends Exception
+{
+}
+
+/**
+ * Exception thrown if a value is not a valid key. This represents errors
+ * that cannot be detected at compile time.
+ * @link http://php.net/manual/en/class.outofboundsexception.php
+ */
+class OutOfBoundsException extends RuntimeException
+{
+}
+
+/**
+ * Exception thrown when you add an element into a full container.
+ * @link http://php.net/manual/en/class.overflowexception.php
+ */
+class OverflowException extends RuntimeException
+{
+}
+
+/**
+ * Exception thrown to indicate range errors during program execution.
+ * Normally this means there was an arithmetic error other than
+ * under/overflow. This is the runtime version of
+ * <b>DomainException</b>.
+ * @link http://php.net/manual/en/class.rangeexception.php
+ */
+class RangeException extends RuntimeException
+{
+}
+
+/**
+ * Exception thrown when you try to remove an element of an empty container.
+ * @link http://php.net/manual/en/class.underflowexception.php
+ */
+class UnderflowException extends RuntimeException
+{
+}
+
+/**
+ * Exception thrown if a value does not match with a set of values. Typically
+ * this happens when a function calls another function and expects the return
+ * value to be of a certain type or value not including arithmetic or buffer
+ * related errors.
+ * @link http://php.net/manual/en/class.unexpectedvalueexception.php
+ */
+class UnexpectedValueException extends RuntimeException
+{
+}
+
+/**
+ * The EmptyIterator class for an empty iterator.
+ * @link http://www.php.net/manual/en/class.emptyiterator.php
+ */
+class EmptyIterator implements Iterator, Traversable
+{
+
+    /**
+     * Return the current element
+     * @link http://php.net/manual/en/iterator.current.php
+     * @return mixed Can return any type.
+     * @since 5.0.0
+     */
+    public function current()
+    {
+    }
+
+    /**
+     * Move forward to next element
+     * @link http://php.net/manual/en/iterator.next.php
+     * @return void Any returned value is ignored.
+     * @since 5.0.0
+     */
+    public function next()
+    {
+    }
+
+    /**
+     * Return the key of the current element
+     * @link http://php.net/manual/en/iterator.key.php
+     * @return mixed scalar on success, or null on failure.
+     * @since 5.0.0
+     */
+    public function key()
+    {
+    }
+
+    /**
+     * Checks if current position is valid
+     * @link http://php.net/manual/en/iterator.valid.php
+     * @return boolean The return value will be casted to boolean and then evaluated.
+     * Returns true on success or false on failure.
+     * @since 5.0.0
+     */
+    public function valid()
+    {
+    }
+
+    /**
+     * Rewind the Iterator to the first element
+     * @link http://php.net/manual/en/iterator.rewind.php
+     * @return void Any returned value is ignored.
+     * @since 5.0.0
+     */
+    public function rewind()
+    {
+    }
+}
+
+/**
+ * Filtered iterator using the callback to determine which items are accepted or rejected.
+ * @link http://www.php.net/manual/en/class.callbackfilteriterator.php
+ * @since 5.4.0
+ */
+class CallbackFilterIterator extends FilterIterator implements Iterator, Traversable, OuterIterator
+{
+
+    /**
+     * Creates a filtered iterator using the callback to determine which items are accepted or rejected.
+     * @param Iterator $iterator The iterator to be filtered.
+     * @param callable $callback The callback, which should return TRUE to accept the current item or FALSE otherwise.
+     * May be any valid callable value.
+     * The callback should accept up to three arguments: the current item, the current key and the iterator, respectively.
+     * <code> function my_callback($current, $key, $iterator) </code>
+     * @link http://www.php.net/manual/en/callbackfilteriterator.construct.php
+     */
+    function __construct(Iterator $iterator, callable $callback)
+    {
+    }
+
+    /**
+     * This method calls the callback with the current value, current key and the inner iterator.
+     * The callback is expected to return TRUE if the current item is to be accepted, or FALSE otherwise.
+     * @link http://www.php.net/manual/en/callbackfilteriterator.accept.php
+     * @return bool true if the current element is acceptable, otherwise false.
+     */
+    public function accept()
+    {
+    }
+}
+
+/**
+ * (PHP 5 >= 5.4.0)<br>
+ * RecursiveCallbackFilterIterator from a RecursiveIterator
+ * @link http://www.php.net/manual/en/class.recursivecallbackfilteriterator.php
+ */
+class RecursiveCallbackFilterIterator extends CallbackFilterIterator implements OuterIterator, Traversable, Iterator, RecursiveIterator
+{
+
+    /**
+     * Create a RecursiveCallbackFilterIterator from a RecursiveIterator
+     * @param RecursiveIterator $iterator The recursive iterator to be filtered.
+     * @param string $callback The callback, which should return TRUE to accept the current item or FALSE otherwise. See Examples.
+     * May be any valid callable value.
+     * @link http://www.php.net/manual/en/recursivecallbackfilteriterator.getchildren.php
+     */
+    function __construct(RecursiveIterator $iterator, $callback)
+    {
+    }
+
+    /**
+     * Check whether the inner iterator's current element has children
+     * @link http://php.net/manual/en/recursiveiterator.haschildren.php
+     * @return bool Returns TRUE if the current element has children, FALSE otherwise.
+     */
+    public function hasChildren()
+    {
+    }
+
+    /**
+     * Returns an iterator for the current entry.
+     * @link http://www.php.net/manual/en/recursivecallbackfilteriterator.haschildren.php
+     * @return RecursiveCallbackFilterIterator containing the children.
+     */
+    public function getChildren()
+    {
+    }
+
+}
+
+/**
+ * Can be used to iterate through recursive iterators.
+ * @link http://php.net/manual/en/class.recursiveiteratoriterator.php
+ */
+class RecursiveIteratorIterator implements Iterator, Traversable, OuterIterator
+{
+    const LEAVES_ONLY = 0;
+    const SELF_FIRST = 1;
+    const CHILD_FIRST = 2;
+    const CATCH_GET_CHILD = 16;
+
+    /**
+     * Construct a RecursiveIteratorIterator
+     * @link http://php.net/manual/en/recursiveiteratoriterator.construct.php
+     * @param Traversable $iterator
+     * @param $mode [optional]
+     * @param $flags [optional]
+     * @since 5.1.3
+     */
+    public function __construct(Traversable $iterator, $mode, $flags)
+    {
+    }
+
+    /**
+     * Rewind the iterator to the first element of the top level inner iterator
+     * @link http://php.net/manual/en/recursiveiteratoriterator.rewind.php
+     * @return void
+     * @since 5.0
+     */
+    public function rewind()
+    {
+    }
+
+    /**
+     * Check whether the current position is valid
+     * @link http://php.net/manual/en/recursiveiteratoriterator.valid.php
+     * @return bool true if the current position is valid, otherwise false
+     * @since 5.0
+     */
+    public function valid()
+    {
+    }
+
+    /**
+     * Access the current key
+     * @link http://php.net/manual/en/recursiveiteratoriterator.key.php
+     * @return mixed The current key.
+     * @since 5.0
+     */
+    public function key()
+    {
+    }
+
+    /**
+     * Access the current element value
+     * @link http://php.net/manual/en/recursiveiteratoriterator.current.php
+     * @return mixed The current elements value.
+     * @since 5.0
+     */
+    public function current()
+    {
+    }
+
+    /**
+     * Move forward to the next element
+     * @link http://php.net/manual/en/recursiveiteratoriterator.next.php
+     * @return void
+     * @since 5.0
+     */
+    public function next()
+    {
+    }
+
+    /**
+     * Get the current depth of the recursive iteration
+     * @link http://php.net/manual/en/recursiveiteratoriterator.getdepth.php
+     * @return int The current depth of the recursive iteration.
+     * @since 5.0
+     */
+    public function getDepth()
+    {
+    }
+
+    /**
+     * The current active sub iterator
+     * @link http://php.net/manual/en/recursiveiteratoriterator.getsubiterator.php
+     * @param $level [optional]
+     * @return RecursiveIterator The current active sub iterator.
+     * @since 5.0
+     */
+    public function getSubIterator($level)
+    {
+    }
+
+    /**
+     * Get inner iterator
+     * @link http://php.net/manual/en/recursiveiteratoriterator.getinneriterator.php
+     * @return Iterator The current active sub iterator.
+     * @since 5.1.0
+     */
+    public function getInnerIterator()
+    {
+    }
+
+    /**
+     * Begin Iteration
+     * @link http://php.net/manual/en/recursiveiteratoriterator.beginiteration.php
+     * @return void
+     * @since 5.1.0
+     */
+    public function beginIteration()
+    {
+    }
+
+    /**
+     * End Iteration
+     * @link http://php.net/manual/en/recursiveiteratoriterator.enditeration.php
+     * @return void
+     * @since 5.1.0
+     */
+    public function endIteration()
+    {
+    }
+
+    /**
+     * Has children
+     * @link http://php.net/manual/en/recursiveiteratoriterator.callhaschildren.php
+     * @return bool true if the element has children, otherwise false
+     * @since 5.1.0
+     */
+    public function callHasChildren()
+    {
+    }
+
+    /**
+     * Get children
+     * @link http://php.net/manual/en/recursiveiteratoriterator.callgetchildren.php
+     * @return RecursiveIterator A <b>RecursiveIterator</b>.
+     * @since 5.1.0
+     */
+    public function callGetChildren()
+    {
+    }
+
+    /**
+     * Begin children
+     * @link http://php.net/manual/en/recursiveiteratoriterator.beginchildren.php
+     * @return void
+     * @since 5.1.0
+     */
+    public function beginChildren()
+    {
+    }
+
+    /**
+     * End children
+     * @link http://php.net/manual/en/recursiveiteratoriterator.endchildren.php
+     * @return void
+     * @since 5.1.0
+     */
+    public function endChildren()
+    {
+    }
+
+    /**
+     * Next element
+     * @link http://php.net/manual/en/recursiveiteratoriterator.nextelement.php
+     * @return void
+     * @since 5.1.0
+     */
+    public function nextElement()
+    {
+    }
+
+    /**
+     * Set max depth
+     * @link http://php.net/manual/en/recursiveiteratoriterator.setmaxdepth.php
+     * @param string $max_depth [optional] <p>
+     * The maximum allowed depth. Default -1 is used
+     * for any depth.
+     * </p>
+     * @return void
+     * @since 5.1.0
+     */
+    public function setMaxDepth($max_depth)
+    {
+    }
+
+    /**
+     * Get max depth
+     * @link http://php.net/manual/en/recursiveiteratoriterator.getmaxdepth.php
+     * @return mixed The maximum accepted depth, or false if any depth is allowed.
+     * @since 5.1.0
+     */
+    public function getMaxDepth()
+    {
+    }
+}
+
+/**
+ * This iterator wrapper allows the conversion of anything that is
+ * Traversable into an Iterator.
+ * It is important to understand that most classes that do not implement
+ * Iterators have reasons as most likely they do not allow the full
+ * Iterator feature set. If so, techniques should be provided to prevent
+ * misuse, otherwise expect exceptions or fatal errors.
+ * @link http://php.net/manual/en/class.iteratoriterator.php
+ */
+class IteratorIterator implements Iterator, Traversable, OuterIterator
+{
+
+    /**
+     * Create an iterator from anything that is traversable
+     * @link http://php.net/manual/en/iteratoriterator.construct.php
+     * @param Traversable $iterator
+     * @since 5.1.0
+     */
+    public function __construct(Traversable $iterator)
+    {
+    }
+
+    /**
+     * Get the inner iterator
+     * @link http://php.net/manual/en/iteratoriterator.getinneriterator.php
+     * @return Iterator The inner iterator as passed to IteratorIterator::__construct.
+     * @since 5.1.0
+     */
+    public function getInnerIterator()
+    {
+    }
+
+    /**
+     * Rewind to the first element
+     * @link http://php.net/manual/en/iteratoriterator.rewind.php
+     * @return void
+     * @since 5.1.0
+     */
+    public function rewind()
+    {
+    }
+
+    /**
+     * Checks if the iterator is valid
+     * @link http://php.net/manual/en/iteratoriterator.valid.php
+     * @return bool true if the iterator is valid, otherwise false
+     * @since 5.1.0
+     */
+    public function valid()
+    {
+    }
+
+    /**
+     * Get the key of the current element
+     * @link http://php.net/manual/en/iteratoriterator.key.php
+     * @return mixed The key of the current element.
+     * @since 5.1.0
+     */
+    public function key()
+    {
+    }
+
+    /**
+     * Get the current value
+     * @link http://php.net/manual/en/iteratoriterator.current.php
+     * @return mixed The value of the current element.
+     * @since 5.1.0
+     */
+    public function current()
+    {
+    }
+
+    /**
+     * Forward to the next element
+     * @link http://php.net/manual/en/iteratoriterator.next.php
+     * @return void
+     * @since 5.1.0
+     */
+    public function next()
+    {
+    }
+}
+
+/**
+ * This abstract iterator filters out unwanted values. This class should be extended to
+ * implement custom iterator filters. The <b>FilterIterator::accept</b>
+ * must be implemented in the subclass.
+ * @link http://php.net/manual/en/class.filteriterator.php
+ */
+abstract class FilterIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator
+{
+
+    /**
+     * Construct a filterIterator
+     * @link http://php.net/manual/en/filteriterator.construct.php
+     * @param Iterator $iterator
+     * @since 5.1.0
+     */
+    public function __construct(Iterator $iterator)
+    {
+    }
+
+    /**
+     * Check whether the current element of the iterator is acceptable
+     * @link http://php.net/manual/en/filteriterator.accept.php
+     * @return bool true if the current element is acceptable, otherwise false.
+     * @since 5.1.0
+     */
+    abstract public function accept();
+
+    /**
+     * Rewind the iterator
+     * @link http://php.net/manual/en/filteriterator.rewind.php
+     * @return void
+     * @since 5.1.0
+     */
+    public function rewind()
+    {
+    }
+
+    /**
+     * Check whether the current element is valid
+     * @link http://php.net/manual/en/filteriterator.valid.php
+     * @return bool true if the current element is valid, otherwise false
+     * @since 5.1.0
+     */
+    public function valid()
+    {
+    }
+
+    /**
+     * Get the current key
+     * @link http://php.net/manual/en/filteriterator.key.php
+     * @return mixed The current key.
+     * @since 5.1.0
+     */
+    public function key()
+    {
+    }
+
+    /**
+     * Get the current element value
+     * @link http://php.net/manual/en/filteriterator.current.php
+     * @return mixed The current element value.
+     * @since 5.1.0
+     */
+    public function current()
+    {
+    }
+
+    /**
+     * Move the iterator forward
+     * @link http://php.net/manual/en/filteriterator.next.php
+     * @return void
+     * @since 5.1.0
+     */
+    public function next()
+    {
+    }
+
+    /**
+     * Get the inner iterator
+     * @link http://php.net/manual/en/filteriterator.getinneriterator.php
+     * @return Iterator The inner iterator.
+     * @since 5.1.0
+     */
+    public function getInnerIterator()
+    {
+    }
+}
+
+/**
+ * This abstract iterator filters out unwanted values for a <b>RecursiveIterator</b>.
+ * This class should be extended to implement custom filters.
+ * The <b>RecursiveFilterIterator::accept</b> must be implemented in the subclass.
+ * @link http://php.net/manual/en/class.recursivefilteriterator.php
+ */
+abstract class RecursiveFilterIterator extends FilterIterator implements Iterator, Traversable, OuterIterator, RecursiveIterator
+{
+
+    /**
+     * Create a RecursiveFilterIterator from a RecursiveIterator
+     * @link http://php.net/manual/en/recursivefilteriterator.construct.php
+     * @param RecursiveIterator $iterator
+     * @since 5.1.0
+     */
+    public function __construct(RecursiveIterator $iterator)
+    {
+    }
+
+    /**
+     * Check whether the inner iterator's current element has children
+     * @link http://php.net/manual/en/recursivefilteriterator.haschildren.php
+     * @return bool true if the inner iterator has children, otherwise false
+     * @since 5.1.0
+     */
+    public function hasChildren()
+    {
+    }
+
+    /**
+     * Return the inner iterator's children contained in a RecursiveFilterIterator
+     * @link http://php.net/manual/en/recursivefilteriterator.getchildren.php
+     * @return RecursiveFilterIterator containing the inner iterator's children.
+     * @since 5.1.0
+     */
+    public function getChildren()
+    {
+    }
+}
+
+/**
+ * This extended FilterIterator allows a recursive iteration using RecursiveIteratorIterator that only shows those elements which have children.
+ * @link http://php.net/manual/en/class.parentiterator.php
+ */
+class ParentIterator extends RecursiveFilterIterator implements RecursiveIterator, OuterIterator, Traversable, Iterator
+{
+
+    /**
+     * Constructs a ParentIterator
+     * @link http://php.net/manual/en/parentiterator.construct.php
+     * @param RecursiveIterator $iterator
+     * @since 5.1.0
+     */
+    public function __construct(RecursiveIterator $iterator)
+    {
+    }
+
+    /**
+     * Determines acceptability
+     * @link http://php.net/manual/en/parentiterator.accept.php
+     * @return bool true if the current element is acceptable, otherwise false.
+     * @since 5.1.0
+     */
+    public function accept()
+    {
+    }
+
+    /**
+     * Check whether the inner iterator's current element has children
+     * @link http://php.net/manual/en/recursivefilteriterator.haschildren.php
+     * @return bool true if the inner iterator has children, otherwise false
+     * @since 5.1.0
+     */
+    public function hasChildren()
+    {
+    }
+
+    /**
+     * Return the inner iterator's children contained in a RecursiveFilterIterator
+     * @link http://php.net/manual/en/recursivefilteriterator.getchildren.php
+     * @return ParentIterator containing the inner iterator's children.
+     * @since 5.1.0
+     */
+    public function getChildren()
+    {
+    }
+}
+
+/**
  * The <b>LimitIterator</b> class allows iteration over
  * a limited subset of items in an <b>Iterator</b>.
  * @link http://php.net/manual/en/class.limititerator.php
  */
-class LimitIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator {
+class LimitIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator
+{
 
     /**
      * Construct a LimitIterator
@@ -679,7 +802,9 @@ class LimitIterator extends IteratorIterator implements OuterIterator, Traversab
      * @param $count [optional]
      * @since 5.1.0
      */
-    public function __construct(Iterator $iterator, $offset, $count) { }
+    public function __construct(Iterator $iterator, $offset, $count)
+    {
+    }
 
     /**
      * Rewind the iterator to the specified starting offset
@@ -687,7 +812,9 @@ class LimitIterator extends IteratorIterator implements OuterIterator, Traversab
      * @return void
      * @since 5.1.0
      */
-    public function rewind() { }
+    public function rewind()
+    {
+    }
 
     /**
      * Check whether the current element is valid
@@ -695,7 +822,9 @@ class LimitIterator extends IteratorIterator implements OuterIterator, Traversab
      * @return bool true on success or false on failure.
      * @since 5.1.0
      */
-    public function valid() { }
+    public function valid()
+    {
+    }
 
     /**
      * Get current key
@@ -703,7 +832,9 @@ class LimitIterator extends IteratorIterator implements OuterIterator, Traversab
      * @return mixed the key for the current item.
      * @since 5.1.0
      */
-    public function key() { }
+    public function key()
+    {
+    }
 
     /**
      * Get current element
@@ -711,7 +842,9 @@ class LimitIterator extends IteratorIterator implements OuterIterator, Traversab
      * @return mixed the current element or null if there is none.
      * @since 5.1.0
      */
-    public function current() { }
+    public function current()
+    {
+    }
 
     /**
      * Move the iterator forward
@@ -719,7 +852,9 @@ class LimitIterator extends IteratorIterator implements OuterIterator, Traversab
      * @return void
      * @since 5.1.0
      */
-    public function next() { }
+    public function next()
+    {
+    }
 
     /**
      * Seek to the given position
@@ -730,7 +865,9 @@ class LimitIterator extends IteratorIterator implements OuterIterator, Traversab
      * @return int the offset position after seeking.
      * @since 5.1.0
      */
-    public function seek($position) { }
+    public function seek($position)
+    {
+    }
 
     /**
      * Return the current position
@@ -738,7 +875,9 @@ class LimitIterator extends IteratorIterator implements OuterIterator, Traversab
      * @return int The current position.
      * @since 5.1.0
      */
-    public function getPosition() { }
+    public function getPosition()
+    {
+    }
 
     /**
      * Get inner iterator
@@ -746,14 +885,17 @@ class LimitIterator extends IteratorIterator implements OuterIterator, Traversab
      * @return Iterator The inner iterator passed to <b>LimitIterator::__construct</b>.
      * @since 5.1.0
      */
-    public function getInnerIterator() { }
+    public function getInnerIterator()
+    {
+    }
 }
 
 /**
  * This object supports cached iteration over another iterator.
  * @link http://php.net/manual/en/class.cachingiterator.php
  */
-class CachingIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator, ArrayAccess, Countable {
+class CachingIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator, ArrayAccess, Countable
+{
     const CALL_TOSTRING = 1;
     const CATCH_GET_CHILD = 16;
     const TOSTRING_USE_KEY = 2;
@@ -769,7 +911,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @param $flags [optional]
      * @since 5.0
      */
-    public function __construct(Iterator $iterator, $flags = self::CALL_TOSTRING) { }
+    public function __construct(Iterator $iterator, $flags = self::CALL_TOSTRING)
+    {
+    }
 
     /**
      * Rewind the iterator
@@ -777,7 +921,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return void
      * @since 5.0
      */
-    public function rewind() { }
+    public function rewind()
+    {
+    }
 
     /**
      * Check whether the current element is valid
@@ -785,7 +931,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return bool true on success or false on failure.
      * @since 5.0
      */
-    public function valid() { }
+    public function valid()
+    {
+    }
 
     /**
      * Return the key for the current element
@@ -793,7 +941,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return mixed
      * @since 5.0
      */
-    public function key() { }
+    public function key()
+    {
+    }
 
     /**
      * Return the current element
@@ -801,7 +951,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return mixed
      * @since 5.0
      */
-    public function current() { }
+    public function current()
+    {
+    }
 
     /**
      * Move the iterator forward
@@ -809,7 +961,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return void
      * @since 5.0
      */
-    public function next() { }
+    public function next()
+    {
+    }
 
     /**
      * Check whether the inner iterator has a valid next element
@@ -817,7 +971,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return bool true on success or false on failure.
      * @since 5.0
      */
-    public function hasNext() { }
+    public function hasNext()
+    {
+    }
 
     /**
      * Return the string representation of the current element
@@ -825,7 +981,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return string The string representation of the current element.
      * @since 5.0
      */
-    public function __toString() { }
+    public function __toString()
+    {
+    }
 
     /**
      * Returns the inner iterator
@@ -833,7 +991,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return Iterator an object implementing the Iterator interface.
      * @since 5.0
      */
-    public function getInnerIterator() { }
+    public function getInnerIterator()
+    {
+    }
 
     /**
      * Get flags used
@@ -841,7 +1001,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return int Bitmask of the flags
      * @since 5.2.0
      */
-    public function getFlags() { }
+    public function getFlags()
+    {
+    }
 
     /**
      * The setFlags purpose
@@ -850,7 +1012,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return void
      * @since 5.2.0
      */
-    public function setFlags($flags) { }
+    public function setFlags($flags)
+    {
+    }
 
     /**
      * The offsetGet purpose
@@ -861,7 +1025,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return void Description...
      * @since 5.2.0
      */
-    public function offsetGet($index) { }
+    public function offsetGet($index)
+    {
+    }
 
     /**
      * The offsetSet purpose
@@ -875,7 +1041,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return void
      * @since 5.2.0
      */
-    public function offsetSet($index, $newval) { }
+    public function offsetSet($index, $newval)
+    {
+    }
 
     /**
      * The offsetUnset purpose
@@ -886,7 +1054,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return void
      * @since 5.2.0
      */
-    public function offsetUnset($index) { }
+    public function offsetUnset($index)
+    {
+    }
 
     /**
      * The offsetExists purpose
@@ -897,7 +1067,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return bool true if an entry referenced by the offset exists, false otherwise.
      * @since 5.2.0
      */
-    public function offsetExists($index) { }
+    public function offsetExists($index)
+    {
+    }
 
     /**
      * The getCache purpose
@@ -905,7 +1077,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return array Description...
      * @since 5.2.0
      */
-    public function getCache() { }
+    public function getCache()
+    {
+    }
 
     /**
      * The number of elements in the iterator
@@ -913,7 +1087,9 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
      * @return void The count of the elements iterated over.
      * @since 5.2.2
      */
-    public function count() { }
+    public function count()
+    {
+    }
 }
 
 /**
@@ -921,7 +1097,8 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
  * @link http://php.net/manual/en/class.recursivecachingiterator.php
  */
 class RecursiveCachingIterator extends CachingIterator
-    implements Countable, ArrayAccess, Iterator, Traversable, OuterIterator, RecursiveIterator {
+    implements Countable, ArrayAccess, Iterator, Traversable, OuterIterator, RecursiveIterator
+{
 
     /**
      * Construct
@@ -931,7 +1108,9 @@ class RecursiveCachingIterator extends CachingIterator
      * and/or CATCH_GET_CHILD to catch exceptions when trying to get children.
      * @since 5.1.0
      */
-    public function __construct(Iterator $iterator, $flags = self::CALL_TOSTRING) { }
+    public function __construct(Iterator $iterator, $flags = self::CALL_TOSTRING)
+    {
+    }
 
     /**
      * Check whether the current element of the inner iterator has children
@@ -939,7 +1118,9 @@ class RecursiveCachingIterator extends CachingIterator
      * @return bool true if the inner iterator has children, otherwise false
      * @since 5.1.0
      */
-    public function hasChildren() { }
+    public function hasChildren()
+    {
+    }
 
     /**
      * Return the inner iterator's children as a RecursiveCachingIterator
@@ -947,7 +1128,9 @@ class RecursiveCachingIterator extends CachingIterator
      * @return RecursiveCachingIterator The inner iterator's children, as a RecursiveCachingIterator.
      * @since 5.1.0
      */
-    public function getChildren() { }
+    public function getChildren()
+    {
+    }
 }
 
 
@@ -955,7 +1138,8 @@ class RecursiveCachingIterator extends CachingIterator
  * This iterator cannot be rewinded.
  * @link http://php.net/manual/en/class.norewinditerator.php
  */
-class NoRewindIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator {
+class NoRewindIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator
+{
 
     /**
      * Construct a NoRewindIterator
@@ -963,7 +1147,9 @@ class NoRewindIterator extends IteratorIterator implements OuterIterator, Traver
      * @param Iterator $iterator
      * @since 5.1.0
      */
-    public function __construct(Iterator $iterator) { }
+    public function __construct(Iterator $iterator)
+    {
+    }
 
     /**
      * Prevents the rewind operation on the inner iterator.
@@ -971,7 +1157,9 @@ class NoRewindIterator extends IteratorIterator implements OuterIterator, Traver
      * @return void
      * @since 5.1.0
      */
-    public function rewind() { }
+    public function rewind()
+    {
+    }
 
     /**
      * Validates the iterator
@@ -979,7 +1167,9 @@ class NoRewindIterator extends IteratorIterator implements OuterIterator, Traver
      * @return bool true on success or false on failure.
      * @since 5.1.0
      */
-    public function valid() { }
+    public function valid()
+    {
+    }
 
     /**
      * Get the current key
@@ -987,7 +1177,9 @@ class NoRewindIterator extends IteratorIterator implements OuterIterator, Traver
      * @return mixed The current key.
      * @since 5.1.0
      */
-    public function key() { }
+    public function key()
+    {
+    }
 
     /**
      * Get the current value
@@ -995,7 +1187,9 @@ class NoRewindIterator extends IteratorIterator implements OuterIterator, Traver
      * @return mixed The current value.
      * @since 5.1.0
      */
-    public function current() { }
+    public function current()
+    {
+    }
 
     /**
      * Forward to the next element
@@ -1003,7 +1197,9 @@ class NoRewindIterator extends IteratorIterator implements OuterIterator, Traver
      * @return void
      * @since 5.1.0
      */
-    public function next() { }
+    public function next()
+    {
+    }
 
     /**
      * Get the inner iterator
@@ -1011,21 +1207,26 @@ class NoRewindIterator extends IteratorIterator implements OuterIterator, Traver
      * @return Iterator The inner iterator, as passed to <b>NoRewindIterator::__construct</b>.
      * @since 5.1.0
      */
-    public function getInnerIterator() { }
+    public function getInnerIterator()
+    {
+    }
 }
 
 /**
  * An Iterator that iterates over several iterators one after the other.
  * @link http://php.net/manual/en/class.appenditerator.php
  */
-class AppendIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator {
+class AppendIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator
+{
 
     /**
      * Constructs an AppendIterator
      * @link http://php.net/manual/en/appenditerator.construct.php
      * @since 5.1.0
      */
-    public function __construct() { }
+    public function __construct()
+    {
+    }
 
     /**
      * Appends an iterator
@@ -1036,7 +1237,9 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
      * @return void
      * @since 5.1.0
      */
-    public function append(Iterator $iterator) { }
+    public function append(Iterator $iterator)
+    {
+    }
 
     /**
      * Rewinds the Iterator
@@ -1044,7 +1247,9 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
      * @return void
      * @since 5.1.0
      */
-    public function rewind() { }
+    public function rewind()
+    {
+    }
 
     /**
      * Checks validity of the current element
@@ -1052,7 +1257,9 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
      * @return bool true on success or false on failure.
      * @since 5.1.0
      */
-    public function valid() { }
+    public function valid()
+    {
+    }
 
     /**
      * Gets the current key
@@ -1060,7 +1267,9 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
      * @return mixed The current key if it is valid or null otherwise.
      * @since 5.1.0
      */
-    public function key() { }
+    public function key()
+    {
+    }
 
     /**
      * Gets the current value
@@ -1068,7 +1277,9 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
      * @return mixed The current value if it is valid or &null; otherwise.
      * @since 5.1.0
      */
-    public function current() { }
+    public function current()
+    {
+    }
 
     /**
      * Moves to the next element
@@ -1076,7 +1287,9 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
      * @return void
      * @since 5.1.0
      */
-    public function next() { }
+    public function next()
+    {
+    }
 
     /**
      * Gets an inner iterator
@@ -1084,7 +1297,9 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
      * @return Iterator the current inner Iterator.
      * @since 5.1.0
      */
-    public function getInnerIterator() { }
+    public function getInnerIterator()
+    {
+    }
 
     /**
      * Gets an index of iterators
@@ -1092,7 +1307,9 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
      * @return int The index of iterators.
      * @since 5.1.0
      */
-    public function getIteratorIndex() { }
+    public function getIteratorIndex()
+    {
+    }
 
     /**
      * The getArrayIterator method
@@ -1100,7 +1317,9 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
      * @return ArrayIterator containing the appended iterators.
      * @since 5.1.0
      */
-    public function getArrayIterator() { }
+    public function getArrayIterator()
+    {
+    }
 }
 
 /**
@@ -1109,7 +1328,8 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
  * rewind the iterator upon reaching its end.
  * @link http://php.net/manual/en/class.infiniteiterator.php
  */
-class InfiniteIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator {
+class InfiniteIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator
+{
 
     /**
      * Constructs an InfiniteIterator
@@ -1117,7 +1337,9 @@ class InfiniteIterator extends IteratorIterator implements OuterIterator, Traver
      * @param Iterator $iterator
      * @since 5.1.0
      */
-    public function __construct(Iterator $iterator) { }
+    public function __construct(Iterator $iterator)
+    {
+    }
 
     /**
      * Moves the inner Iterator forward or rewinds it
@@ -1125,14 +1347,17 @@ class InfiniteIterator extends IteratorIterator implements OuterIterator, Traver
      * @return void
      * @since 5.1.0
      */
-    public function next() { }
+    public function next()
+    {
+    }
 }
 
 /**
  * This iterator can be used to filter another iterator based on a regular expression.
  * @link http://php.net/manual/en/class.regexiterator.php
  */
-class RegexIterator extends FilterIterator implements Iterator, Traversable, OuterIterator {
+class RegexIterator extends FilterIterator implements Iterator, Traversable, OuterIterator
+{
 
     /**
      * Return all matches for the current entry @see preg_match_all
@@ -1177,7 +1402,9 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
      * @param int $preg_flags [optional] The regular expression flags. These flags depend on the operation mode parameter
      * @since 5.2.0
      */
-    public function __construct(Iterator $iterator, $regex, $mode = self::MATCH, $flags = 0, $preg_flags = 0) { }
+    public function __construct(Iterator $iterator, $regex, $mode = self::MATCH, $flags = 0, $preg_flags = 0)
+    {
+    }
 
     /**
      * Get accept status
@@ -1185,7 +1412,9 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
      * @return bool true if a match, false otherwise.
      * @since 5.2.0
      */
-    public function accept() { }
+    public function accept()
+    {
+    }
 
     /**
      * Returns operation mode.
@@ -1193,7 +1422,9 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
      * @return int the operation mode.
      * @since 5.2.0
      */
-    public function getMode() { }
+    public function getMode()
+    {
+    }
 
     /**
      * Sets the operation mode.
@@ -1246,7 +1477,9 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
      * @return void
      * @since 5.2.0
      */
-    public function setMode($mode) { }
+    public function setMode($mode)
+    {
+    }
 
     /**
      * Get flags
@@ -1254,7 +1487,9 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
      * @return int the set flags.
      * @since 5.2.0
      */
-    public function getFlags() { }
+    public function getFlags()
+    {
+    }
 
     /**
      * Sets the flags.
@@ -1283,15 +1518,19 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
      * @return void
      * @since 5.2.0
      */
-    public function setFlags($flags) { }
+    public function setFlags($flags)
+    {
+    }
 
     /**
-    * Returns current regular expression
-    * @link http://www.php.net/manual/en/regexiterator.getregex.php
-    * @return string
-    * @since 5.4.0
-    */
-    public function getRegex() {}
+     * Returns current regular expression
+     * @link http://www.php.net/manual/en/regexiterator.getregex.php
+     * @return string
+     * @since 5.4.0
+     */
+    public function getRegex()
+    {
+    }
 
     /**
      * Returns the regular expression flags.
@@ -1299,7 +1538,9 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
      * @return int a bitmask of the regular expression flags.
      * @since 5.2.0
      */
-    public function getPregFlags() { }
+    public function getPregFlags()
+    {
+    }
 
     /**
      * Sets the regular expression flags.
@@ -1311,14 +1552,17 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
      * @return void
      * @since 5.2.0
      */
-    public function setPregFlags($preg_flags) { }
+    public function setPregFlags($preg_flags)
+    {
+    }
 }
 
 /**
  * This recursive iterator can filter another recursive iterator via a regular expression.
  * @link http://php.net/manual/en/class.recursiveregexiterator.php
  */
-class RecursiveRegexIterator extends RegexIterator implements OuterIterator, Traversable, Iterator, RecursiveIterator {
+class RecursiveRegexIterator extends RegexIterator implements OuterIterator, Traversable, Iterator, RecursiveIterator
+{
     /**
      * Creates a new RecursiveRegexIterator.
      * @link http://php.net/manual/en/recursiveregexiterator.construct.php
@@ -1329,7 +1573,9 @@ class RecursiveRegexIterator extends RegexIterator implements OuterIterator, Tra
      * @param int $preg_flags [optional] The regular expression flags. These flags depend on the operation mode parameter
      * @since 5.2.0
      */
-    public function __construct(RecursiveIterator $iterator, $regex, $mode, $flags, $preg_flags) { }
+    public function __construct(RecursiveIterator $iterator, $regex, $mode, $flags, $preg_flags)
+    {
+    }
 
     /**
      * Returns whether an iterator can be obtained for the current entry.
@@ -1337,7 +1583,9 @@ class RecursiveRegexIterator extends RegexIterator implements OuterIterator, Tra
      * @return bool true if an iterator can be obtained for the current entry, otherwise returns false.
      * @since 5.2.0
      */
-    public function hasChildren() { }
+    public function hasChildren()
+    {
+    }
 
     /**
      * Returns an iterator for the current entry.
@@ -1345,14 +1593,17 @@ class RecursiveRegexIterator extends RegexIterator implements OuterIterator, Tra
      * @return RecursiveRegexIterator An iterator for the current entry, if it can be iterated over by the inner iterator.
      * @since 5.2.0
      */
-    public function getChildren() { }
+    public function getChildren()
+    {
+    }
 }
 
 /**
  * Allows iterating over a <b>RecursiveIterator</b> to generate an ASCII graphic tree.
  * @link http://php.net/manual/en/class.recursivetreeiterator.php
  */
-class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIterator, Traversable, Iterator {
+class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIterator, Traversable, Iterator
+{
 
     const BYPASS_CURRENT = 4;
     const BYPASS_KEY = 8;
@@ -1375,7 +1626,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @since 5.3.0
      */
     public function __construct($iterator, $flags = RecursiveTreeIterator::BYPASS_KEY, $caching_it_flags = CachingIterator::CATCH_GET_CHILD,
-                                $mode = RecursiveIteratorIterator::SELF_FIRST) { }
+                                $mode = RecursiveIteratorIterator::SELF_FIRST)
+    {
+    }
 
     /**
      * Rewind iterator
@@ -1383,7 +1636,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return void
      * @since 5.3.0
      */
-    public function rewind() { }
+    public function rewind()
+    {
+    }
 
     /**
      * Check validity
@@ -1391,7 +1646,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return bool true if the current position is valid, otherwise false
      * @since 5.3.0
      */
-    public function valid() { }
+    public function valid()
+    {
+    }
 
     /**
      * Get the key of the current element
@@ -1399,7 +1656,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return string the current key prefixed and postfixed.
      * @since 5.3.0
      */
-    public function key() { }
+    public function key()
+    {
+    }
 
     /**
      * Get current element
@@ -1407,7 +1666,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return string the current element prefixed and postfixed.
      * @since 5.3.0
      */
-    public function current() { }
+    public function current()
+    {
+    }
 
     /**
      * Move to next element
@@ -1415,7 +1676,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return void
      * @since 5.3.0
      */
-    public function next() { }
+    public function next()
+    {
+    }
 
     /**
      * Begin iteration
@@ -1423,7 +1686,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return RecursiveIterator A <b>RecursiveIterator</b>.
      * @since 5.3.0
      */
-    public function beginIteration() { }
+    public function beginIteration()
+    {
+    }
 
     /**
      * End iteration
@@ -1431,7 +1696,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return void
      * @since 5.3.0
      */
-    public function endIteration() { }
+    public function endIteration()
+    {
+    }
 
     /**
      * Has children
@@ -1439,7 +1706,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return bool true if there are children, otherwise false
      * @since 5.3.0
      */
-    public function callHasChildren() { }
+    public function callHasChildren()
+    {
+    }
 
     /**
      * Get children
@@ -1447,7 +1716,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return RecursiveIterator A <b>RecursiveIterator</b>.
      * @since 5.3.0
      */
-    public function callGetChildren() { }
+    public function callGetChildren()
+    {
+    }
 
     /**
      * Begin children
@@ -1455,7 +1726,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return void
      * @since 5.3.0
      */
-    public function beginChildren() { }
+    public function beginChildren()
+    {
+    }
 
     /**
      * End children
@@ -1463,7 +1736,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return void
      * @since 5.3.0
      */
-    public function endChildren() { }
+    public function endChildren()
+    {
+    }
 
     /**
      * Next element
@@ -1471,7 +1746,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return void
      * @since 5.3.0
      */
-    public function nextElement() { }
+    public function nextElement()
+    {
+    }
 
     /**
      * Get the prefix
@@ -1479,7 +1756,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return string the string to place in front of current element
      * @since 5.3.0
      */
-    public function getPrefix() { }
+    public function getPrefix()
+    {
+    }
 
     /**
      * Set a part of the prefix
@@ -1493,7 +1772,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return void
      * @since 5.3.0
      */
-    public function setPrefixPart($part, $value) { }
+    public function setPrefixPart($part, $value)
+    {
+    }
 
     /**
      * Get current entry
@@ -1501,7 +1782,9 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return string the part of the tree built for the current element.
      * @since 5.3.0
      */
-    public function getEntry() { }
+    public function getEntry()
+    {
+    }
 
     /**
      * Get the postfix
@@ -1509,14 +1792,17 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
      * @return string to place after the current element.
      * @since 5.3.0
      */
-    public function getPostfix() { }
+    public function getPostfix()
+    {
+    }
 }
 
 /**
  * This class allows objects to work as arrays.
  * @link http://php.net/manual/en/class.arrayobject.php
  */
-class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serializable, Countable {
+class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serializable, Countable
+{
     /**
      * Properties of the object have their normal functionality when accessed as list (var_dump, foreach, etc.).
      */
@@ -1537,7 +1823,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @since 5.0.0
      *
      */
-    public function __construct($input = null, $flags = 0, $iterator_class = "ArrayIterator") { }
+    public function __construct($input = null, $flags = 0, $iterator_class = "ArrayIterator")
+    {
+    }
 
     /**
      * Returns whether the requested index exists
@@ -1548,7 +1836,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return bool true if the requested index exists, otherwise false
      * @since 5.0.0
      */
-    public function offsetExists($index) { }
+    public function offsetExists($index)
+    {
+    }
 
     /**
      * Returns the value at the specified index
@@ -1559,7 +1849,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return mixed The value at the specified index or false.
      * @since 5.0.0
      */
-    public function offsetGet($index) { }
+    public function offsetGet($index)
+    {
+    }
 
     /**
      * Sets the value at the specified index to newval
@@ -1573,7 +1865,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return void
      * @since 5.0.0
      */
-    public function offsetSet($index, $newval) { }
+    public function offsetSet($index, $newval)
+    {
+    }
 
     /**
      * Unsets the value at the specified index
@@ -1584,7 +1878,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return void
      * @since 5.0.0
      */
-    public function offsetUnset($index) { }
+    public function offsetUnset($index)
+    {
+    }
 
     /**
      * Appends the value
@@ -1595,7 +1891,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return void
      * @since 5.0.0
      */
-    public function append($value) { }
+    public function append($value)
+    {
+    }
 
     /**
      * Creates a copy of the ArrayObject.
@@ -1604,7 +1902,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * an array of the public properties of that object will be returned.
      * @since 5.0.0
      */
-    public function getArrayCopy() { }
+    public function getArrayCopy()
+    {
+    }
 
     /**
      * Get the number of public properties in the ArrayObject
@@ -1613,7 +1913,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return int The number of public properties in the ArrayObject.
      * @since 5.0.0
      */
-    public function count() { }
+    public function count()
+    {
+    }
 
     /**
      * Gets the behavior flags.
@@ -1621,7 +1923,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return int the behavior flags of the ArrayObject.
      * @since 5.1.0
      */
-    public function getFlags() { }
+    public function getFlags()
+    {
+    }
 
     /**
      * Sets the behavior flags.
@@ -1659,7 +1963,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return void
      * @since 5.1.0
      */
-    public function setFlags($flags) { }
+    public function setFlags($flags)
+    {
+    }
 
     /**
      * Sort the entries by value
@@ -1667,7 +1973,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return void
      * @since 5.2.0
      */
-    public function asort() { }
+    public function asort()
+    {
+    }
 
     /**
      * Sort the entries by key
@@ -1675,7 +1983,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return void
      * @since 5.2.0
      */
-    public function ksort() { }
+    public function ksort()
+    {
+    }
 
     /**
      * Sort the entries with a user-defined comparison function and maintain key association
@@ -1691,7 +2001,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return void
      * @since 5.2.0
      */
-    public function uasort($cmp_function) { }
+    public function uasort($cmp_function)
+    {
+    }
 
     /**
      * Sort the entries by keys using a user-defined comparison function
@@ -1710,7 +2022,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return void
      * @since 5.2.0
      */
-    public function uksort($cmp_function) { }
+    public function uksort($cmp_function)
+    {
+    }
 
     /**
      * Sort entries using a "natural order" algorithm
@@ -1718,7 +2032,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return void
      * @since 5.2.0
      */
-    public function natsort() { }
+    public function natsort()
+    {
+    }
 
     /**
      * Sort an array using a case insensitive "natural order" algorithm
@@ -1726,7 +2042,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return void
      * @since 5.2.0
      */
-    public function natcasesort() { }
+    public function natcasesort()
+    {
+    }
 
     /**
      * Unserialize an ArrayObject
@@ -1737,7 +2055,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return void The unserialized <b>ArrayObject</b>.
      * @since 5.3.0
      */
-    public function unserialize($serialized) { }
+    public function unserialize($serialized)
+    {
+    }
 
     /**
      * Serialize an ArrayObject
@@ -1745,7 +2065,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return string The serialized representation of the <b>ArrayObject</b>.
      * @since 5.3.0
      */
-    public function serialize() { }
+    public function serialize()
+    {
+    }
 
     /**
      * Create a new iterator from an ArrayObject instance
@@ -1753,7 +2075,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return ArrayIterator An iterator from an <b>ArrayObject</b>.
      * @since 5.0.0
      */
-    public function getIterator() { }
+    public function getIterator()
+    {
+    }
 
     /**
      * Exchange the array for another one.
@@ -1764,7 +2088,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return array the old array.
      * @since 5.1.0
      */
-    public function exchangeArray($input) { }
+    public function exchangeArray($input)
+    {
+    }
 
     /**
      * Sets the iterator classname for the ArrayObject.
@@ -1775,7 +2101,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return void
      * @since 5.1.0
      */
-    public function setIteratorClass($iterator_class) { }
+    public function setIteratorClass($iterator_class)
+    {
+    }
 
     /**
      * Gets the iterator classname for the ArrayObject.
@@ -1783,7 +2111,9 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
      * @return string the iterator class name that is used to iterate over this object.
      * @since 5.1.0
      */
-    public function getIteratorClass() { }
+    public function getIteratorClass()
+    {
+    }
 }
 
 /**
@@ -1791,7 +2121,8 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
  * over Arrays and Objects.
  * @link http://php.net/manual/en/class.arrayiterator.php
  */
-class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableIterator, Serializable, Countable {
+class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableIterator, Serializable, Countable
+{
     const STD_PROP_LIST = 1;
     const ARRAY_AS_PROPS = 2;
 
@@ -1804,7 +2135,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @see ArrayObject::setFlags()
      * @since 5.0.0
      */
-    public function __construct($array = array(), $flags = 0) { }
+    public function __construct($array = array(), $flags = 0)
+    {
+    }
 
     /**
      * Check if offset exists
@@ -1815,7 +2148,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return bool true if the offset exists, otherwise false
      * @since 5.0.0
      */
-    public function offsetExists($index) { }
+    public function offsetExists($index)
+    {
+    }
 
     /**
      * Get value for an offset
@@ -1826,7 +2161,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return mixed The value at offset <i>index</i>.
      * @since 5.0.0
      */
-    public function offsetGet($index) { }
+    public function offsetGet($index)
+    {
+    }
 
     /**
      * Set value for an offset
@@ -1840,7 +2177,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.0.0
      */
-    public function offsetSet($index, $newval) { }
+    public function offsetSet($index, $newval)
+    {
+    }
 
     /**
      * Unset value for an offset
@@ -1851,7 +2190,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.0.0
      */
-    public function offsetUnset($index) { }
+    public function offsetUnset($index)
+    {
+    }
 
     /**
      * Append an element
@@ -1862,7 +2203,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.0.0
      */
-    public function append($value) { }
+    public function append($value)
+    {
+    }
 
     /**
      * Get array copy
@@ -1871,7 +2214,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * if ArrayIterator refers to an object.
      * @since 5.0.0
      */
-    public function getArrayCopy() { }
+    public function getArrayCopy()
+    {
+    }
 
     /**
      * Count elements
@@ -1880,7 +2225,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * array or object, respectively.
      * @since 5.0.0
      */
-    public function count() { }
+    public function count()
+    {
+    }
 
     /**
      * Get flags
@@ -1888,7 +2235,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return string The current flags.
      * @since 5.1.0
      */
-    public function getFlags() { }
+    public function getFlags()
+    {
+    }
 
     /**
      * Set behaviour flags
@@ -1902,7 +2251,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.1.0
      */
-    public function setFlags($flags) { }
+    public function setFlags($flags)
+    {
+    }
 
     /**
      * Sort array by values
@@ -1910,7 +2261,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.2.0
      */
-    public function asort() { }
+    public function asort()
+    {
+    }
 
     /**
      * Sort array by keys
@@ -1918,7 +2271,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.2.0
      */
-    public function ksort() { }
+    public function ksort()
+    {
+    }
 
     /**
      * User defined sort
@@ -1929,7 +2284,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.2.0
      */
-    public function uasort($cmp_function) { }
+    public function uasort($cmp_function)
+    {
+    }
 
     /**
      * User defined sort
@@ -1940,7 +2297,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.2.0
      */
-    public function uksort($cmp_function) { }
+    public function uksort($cmp_function)
+    {
+    }
 
     /**
      * Sort an array naturally
@@ -1948,7 +2307,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.2.0
      */
-    public function natsort() { }
+    public function natsort()
+    {
+    }
 
     /**
      * Sort an array naturally, case insensitive
@@ -1956,7 +2317,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.2.0
      */
-    public function natcasesort() { }
+    public function natcasesort()
+    {
+    }
 
     /**
      * Unserialize
@@ -1967,7 +2330,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return string The <b>ArrayIterator</b>.
      * @since 5.3.0
      */
-    public function unserialize($serialized) { }
+    public function unserialize($serialized)
+    {
+    }
 
     /**
      * Serialize
@@ -1975,7 +2340,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return string The serialized <b>ArrayIterator</b>.
      * @since 5.3.0
      */
-    public function serialize() { }
+    public function serialize()
+    {
+    }
 
     /**
      * Rewind array back to the start
@@ -1983,7 +2350,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.0.0
      */
-    public function rewind() { }
+    public function rewind()
+    {
+    }
 
     /**
      * Return current array entry
@@ -1991,7 +2360,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return mixed The current array entry.
      * @since 5.0.0
      */
-    public function current() { }
+    public function current()
+    {
+    }
 
     /**
      * Return current array key
@@ -1999,7 +2370,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return mixed The current array key.
      * @since 5.0.0
      */
-    public function key() { }
+    public function key()
+    {
+    }
 
     /**
      * Move to next entry
@@ -2007,7 +2380,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.0.0
      */
-    public function next() { }
+    public function next()
+    {
+    }
 
     /**
      * Check whether array contains more entries
@@ -2015,7 +2390,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return bool
      * @since 5.0.0
      */
-    public function valid() { }
+    public function valid()
+    {
+    }
 
     /**
      * Seek to position
@@ -2026,7 +2403,9 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
      * @return void
      * @since 5.0.0
      */
-    public function seek($position) { }
+    public function seek($position)
+    {
+    }
 }
 
 /**
@@ -2036,7 +2415,8 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
  * @link http://php.net/manual/en/class.recursivearrayiterator.php
  */
 class RecursiveArrayIterator extends ArrayIterator
-    implements Serializable, SeekableIterator, ArrayAccess, Traversable, Iterator, RecursiveIterator {
+    implements Serializable, SeekableIterator, ArrayAccess, Traversable, Iterator, RecursiveIterator
+{
     const CHILD_ARRAYS_ONLY = 4;
 
 
@@ -2047,7 +2427,9 @@ class RecursiveArrayIterator extends ArrayIterator
      * otherwise false is returned.
      * @since 5.1.0
      */
-    public function hasChildren() { }
+    public function hasChildren()
+    {
+    }
 
     /**
      * Returns an iterator for the current entry if it is an array or an object.
@@ -2055,7 +2437,9 @@ class RecursiveArrayIterator extends ArrayIterator
      * @return RecursiveArrayIterator An iterator for the current entry, if it is an array or object.
      * @since 5.1.0
      */
-    public function getChildren() { }
+    public function getChildren()
+    {
+    }
 }
 
 /**
@@ -2063,12 +2447,14 @@ class RecursiveArrayIterator extends ArrayIterator
  * @return boolean
  * @since 7.1
  */
-function is_iterable($arg) {
+function is_iterable($arg)
+{
 
 }
+
 /**
  * @since 7.1
  */
-define ("MT_RAND_PHP", 1);
+define("MT_RAND_PHP", 1);
 // End of SPL v.0.2
 ?>

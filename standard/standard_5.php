@@ -7,7 +7,9 @@
  * @return boolean The boolean value of var.
  * @since 5.5.0
  */
-function boolval($var) {}
+function boolval($var)
+{
+}
 
 /**
  * Get the integer value of a variable
@@ -23,21 +25,23 @@ function boolval($var) {}
  * objects return 1.
  * </p>
  * <p>
- * The maximum value depends on the system. 32 bit systems have a 
- * maximum signed integer range of -2147483648 to 2147483647. So for example 
- * on such a system, intval('1000000000000') will return 
- * 2147483647. The maximum signed integer value for 64 bit systems is 
+ * The maximum value depends on the system. 32 bit systems have a
+ * maximum signed integer range of -2147483648 to 2147483647. So for example
+ * on such a system, intval('1000000000000') will return
+ * 2147483647. The maximum signed integer value for 64 bit systems is
  * 9223372036854775807.
  * </p>
  * <p>
- * Strings will most likely return 0 although this depends on the 
- * leftmost characters of the string. The common rules of 
- * integer casting 
+ * Strings will most likely return 0 although this depends on the
+ * leftmost characters of the string. The common rules of
+ * integer casting
  * apply.
  * @since 4.0
  * @since 5.0
  */
-function intval ($var, $base = null) {}
+function intval($var, $base = null)
+{
+}
 
 /**
  * Get float value of a variable
@@ -47,7 +51,9 @@ function intval ($var, $base = null) {}
  * @since 4.2.0
  * @since 5.0
  */
-function floatval ($var) {}
+function floatval($var)
+{
+}
 
 /**
  * (PHP 4.2.0, PHP 5)<br/>
@@ -58,7 +64,9 @@ function floatval ($var) {}
  * @param mixed $var May be any scalar type. should not be used on objects, as doing so will emit an E_NOTICE level error and return 1.
  * @return float value of the given variable. Empty arrays return 0, non-empty arrays return 1.
  */
-function doubleval ($var) {}
+function doubleval($var)
+{
+}
 
 /**
  * Get string value of a variable
@@ -67,14 +75,16 @@ function doubleval ($var) {}
  * The variable that is being converted to a string.
  * </p>
  * <p>
- * $var may be any scalar type or an object that implements the __toString() method. 
+ * $var may be any scalar type or an object that implements the __toString() method.
  * You cannot use strval() on arrays or objects that do not implement the __toString() method.
  * </p>
  * @return string The string value of var.
  * @since 4.0
  * @since 5.0
  */
-function strval ($var) {}
+function strval($var)
+{
+}
 
 /**
  * Get the type of a variable
@@ -97,7 +107,9 @@ function strval ($var) {}
  * @since 4.0
  * @since 5.0
  */
-function gettype ($var) {}
+function gettype($var)
+{
+}
 
 /**
  * Set the type of a variable
@@ -135,7 +147,9 @@ function gettype ($var) {}
  * @since 4.0
  * @since 5.0
  */
-function settype (&$var, $type) {}
+function settype(&$var, $type)
+{
+}
 
 /**
  * Finds whether a variable is &null;
@@ -148,7 +162,9 @@ function settype (&$var, $type) {}
  * @since 4.0.4
  * @since 5.0
  */
-function is_null ($var) {}
+function is_null($var)
+{
+}
 
 /**
  * Finds whether a variable is a resource
@@ -161,7 +177,9 @@ function is_null ($var) {}
  * @since 4.0
  * @since 5.0
  */
-function is_resource ($var) {}
+function is_resource($var)
+{
+}
 
 /**
  * Finds out whether a variable is a boolean
@@ -174,7 +192,9 @@ function is_resource ($var) {}
  * @since 4.0
  * @since 5.0
  */
-function is_bool ($var) {}
+function is_bool($var)
+{
+}
 
 /**
  * &Alias; <function>is_int</function>
@@ -187,7 +207,9 @@ function is_bool ($var) {}
  * @since 4.0
  * @since 5.0
  */
-function is_long ($var) {}
+function is_long($var)
+{
+}
 
 /**
  * Finds whether the type of a variable is float
@@ -195,12 +217,14 @@ function is_long ($var) {}
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
- * @return bool true if var is a float, 
+ * @return bool true if var is a float,
  * false otherwise.
  * @since 4.0
  * @since 5.0
  */
-function is_float ($var) {}
+function is_float($var)
+{
+}
 
 /**
  * Find whether the type of a variable is integer
@@ -208,12 +232,14 @@ function is_float ($var) {}
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
- * @return bool true if var is an integer, 
+ * @return bool true if var is an integer,
  * false otherwise.
  * @since 4.0
  * @since 5.0
  */
-function is_int ($var) {}
+function is_int($var)
+{
+}
 
 /**
  * &Alias; <function>is_int</function>
@@ -226,7 +252,9 @@ function is_int ($var) {}
  * @since 4.0
  * @since 5.0
  */
-function is_integer ($var) {}
+function is_integer($var)
+{
+}
 
 /**
  * &Alias; <function>is_float</function>
@@ -239,7 +267,9 @@ function is_integer ($var) {}
  * @since 4.0
  * @since 5.0
  */
-function is_double ($var) {}
+function is_double($var)
+{
+}
 
 /**
  * &Alias; <function>is_float</function>
@@ -252,7 +282,9 @@ function is_double ($var) {}
  * @since 4.0
  * @since 5.0
  */
-function is_real ($var) {}
+function is_real($var)
+{
+}
 
 /**
  * Finds whether a variable is a number or a numeric string
@@ -265,7 +297,9 @@ function is_real ($var) {}
  * @since 4.0
  * @since 5.0
  */
-function is_numeric ($var) {}
+function is_numeric($var)
+{
+}
 
 /**
  * Find whether the type of a variable is string
@@ -278,7 +312,9 @@ function is_numeric ($var) {}
  * @since 4.0
  * @since 5.0
  */
-function is_string ($var) {}
+function is_string($var)
+{
+}
 
 /**
  * Finds whether a variable is an array -> 检测变量是否是数组
@@ -287,7 +323,9 @@ function is_string ($var) {}
  * @return bool true if var is an array, false otherwise.
  * @since 4.0
  */
-function is_array ($var) {}
+function is_array($var)
+{
+}
 
 /**
  * Finds whether a variable is an object
@@ -295,12 +333,14 @@ function is_array ($var) {}
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
- * @return bool true if var is an object, 
+ * @return bool true if var is an object,
  * false otherwise.
  * @since 4.0
  * @since 5.0
  */
-function is_object ($var) {}
+function is_object($var)
+{
+}
 
 /**
  * Finds whether a variable is a scalar
@@ -313,14 +353,16 @@ function is_object ($var) {}
  * @since 4.0.5
  * @since 5.0
  */
-function is_scalar ($var) {}
+function is_scalar($var)
+{
+}
 
 /**
  * Verify that the contents of a variable can be called as a function
  * @link http://php.net/manual/en/function.is-callable.php
  * @param callback|callable $name <p>
  * Can be either the name of a function stored in a string variable, or
- * an object and the name of a method within the object, like this: 
+ * an object and the name of a method within the object, like this:
  * array($SomeObject, 'MethodName')
  * </p>
  * @param bool $syntax_only [optional] <p>
@@ -337,12 +379,14 @@ function is_scalar ($var) {}
  * that someClass::SomeMethod() is a callable static method, this is not
  * the case.
  * </p>
- * @return bool true if name is callable, false 
+ * @return bool true if name is callable, false
  * otherwise.
  * @since 4.0.6
  * @since 5.0
  */
-function is_callable ($name, $syntax_only = null, &$callable_name = null) {}
+function is_callable($name, $syntax_only = null, &$callable_name = null)
+{
+}
 
 /**
  * Closes process file pointer
@@ -355,7 +399,9 @@ function is_callable ($name, $syntax_only = null, &$callable_name = null) {}
  * @since 4.0
  * @since 5.0
  */
-function pclose ($handle) {}
+function pclose($handle)
+{
+}
 
 /**
  * Opens process file pointer
@@ -378,7 +424,9 @@ function pclose ($handle) {}
  * @since 4.0
  * @since 5.0
  */
-function popen ($command, $mode) {}
+function popen($command, $mode)
+{
+}
 
 /**
  * Outputs a file
@@ -399,7 +447,9 @@ function popen ($command, $mode) {}
  * @since 4.0
  * @since 5.0
  */
-function readfile ($filename, $use_include_path = null, $context = null) {}
+function readfile($filename, $use_include_path = null, $context = null)
+{
+}
 
 /**
  * Rewind the position of a file pointer
@@ -412,7 +462,9 @@ function readfile ($filename, $use_include_path = null, $context = null) {}
  * @since 4.0
  * @since 5.0
  */
-function rewind ($handle) {}
+function rewind($handle)
+{
+}
 
 /**
  * Removes directory
@@ -425,7 +477,9 @@ function rewind ($handle) {}
  * @since 4.0
  * @since 5.0
  */
-function rmdir ($dirname, $context = null) {}
+function rmdir($dirname, $context = null)
+{
+}
 
 /**
  * Changes the current umask
@@ -438,7 +492,9 @@ function rmdir ($dirname, $context = null) {}
  * @since 4.0
  * @since 5.0
  */
-function umask ($mask = null) {}
+function umask($mask = null)
+{
+}
 
 /**
  * Closes an open file pointer
@@ -451,7 +507,9 @@ function umask ($mask = null) {}
  * @since 4.0
  * @since 5.0
  */
-function fclose ($handle) {}
+function fclose($handle)
+{
+}
 
 /**
  * Tests for end-of-file on a file pointer
@@ -462,7 +520,9 @@ function fclose ($handle) {}
  * @since 4.0
  * @since 5.0
  */
-function feof ($handle) {}
+function feof($handle)
+{
+}
 
 /**
  * Gets character from file pointer
@@ -473,7 +533,9 @@ function feof ($handle) {}
  * @since 4.0
  * @since 5.0
  */
-function fgetc ($handle) {}
+function fgetc($handle)
+{
+}
 
 /**
  * Gets line from file pointer
@@ -499,7 +561,9 @@ function fgetc ($handle) {}
  * @since 4.0
  * @since 5.0
  */
-function fgets ($handle, $length = null) {}
+function fgets($handle, $length = null)
+{
+}
 
 /**
  * Gets line from file pointer and strip HTML tags
@@ -521,7 +585,9 @@ function fgets ($handle, $length = null) {}
  * @since 4.0
  * @since 5.0
  */
-function fgetss ($handle, $length = null, $allowable_tags = null) {}
+function fgetss($handle, $length = null, $allowable_tags = null)
+{
+}
 
 /**
  * Binary-safe file read
@@ -534,7 +600,9 @@ function fgetss ($handle, $length = null, $allowable_tags = null) {}
  * @since 4.0
  * @since 5.0
  */
-function fread ($handle, $length) {}
+function fread($handle, $length)
+{
+}
 
 /**
  * Opens file or URL
@@ -641,7 +709,7 @@ function fread ($handle, $length) {}
  * generating an error of level E_WARNING. If
  * the file does not exist, attempt to create it. This is equivalent
  * to specifying O_EXCL|O_CREAT flags for the
- * underlying open(2) system call. 
+ * underlying open(2) system call.
  * </td>
  * </tr>
  * <tr valign="top">
@@ -715,7 +783,9 @@ function fread ($handle, $length) {}
  * @since 4.0
  * @since 5.0
  */
-function fopen ($filename, $mode, $use_include_path = null, $context = null) {}
+function fopen($filename, $mode, $use_include_path = null, $context = null)
+{
+}
 
 /**
  * Output all remaining data on a file pointer
@@ -728,7 +798,9 @@ function fopen ($filename, $mode, $use_include_path = null, $context = null) {}
  * @since 4.0
  * @since 5.0
  */
-function fpassthru ($handle) {}
+function fpassthru($handle)
+{
+}
 
 /**
  * Truncates a file to a given length
@@ -754,7 +826,9 @@ function fpassthru ($handle) {}
  * @since 4.0
  * @since 5.0
  */
-function ftruncate ($handle, $size) {}
+function ftruncate($handle, $size)
+{
+}
 
 /**
  * Gets information about a file using an open file pointer
@@ -765,7 +839,9 @@ function ftruncate ($handle, $size) {}
  * @since 4.0
  * @since 5.0
  */
-function fstat ($handle) {}
+function fstat($handle)
+{
+}
 
 /**
  * Seeks on a file pointer
@@ -795,7 +871,9 @@ function fstat ($handle) {}
  * @since 4.0
  * @since 5.0
  */
-function fseek ($handle, $offset, $whence = SEEK_SET) {}
+function fseek($handle, $offset, $whence = SEEK_SET)
+{
+}
 
 /**
  * Returns the current position of the file read/write pointer
@@ -814,7 +892,9 @@ function fseek ($handle, $offset, $whence = SEEK_SET) {}
  * @since 4.0
  * @since 5.0
  */
-function ftell ($handle) {}
+function ftell($handle)
+{
+}
 
 /**
  * Flushes the output to a file
@@ -824,7 +904,9 @@ function ftell ($handle) {}
  * @since 4.0.1
  * @since 5.0
  */
-function fflush ($handle) {}
+function fflush($handle)
+{
+}
 
 /**
  * Binary-safe file write
@@ -845,18 +927,20 @@ function fflush ($handle) {}
  * configuration option will be ignored and no slashes will be
  * stripped from string.
  * </p>
- * @return int 
+ * @return int
  * @since 4.0
  * @since 5.0
  */
-function fwrite ($handle, $string, $length = null) {}
+function fwrite($handle, $string, $length = null)
+{
+}
 
 /**
  * &Alias; <function>fwrite</function>
  * @see fwrite()
  * @link http://php.net/manual/en/function.fputs.php
  * Binary-safe file write
- * @param resource $handle A file system pointer resource that is typically created using fopen(). 
+ * @param resource $handle A file system pointer resource that is typically created using fopen().
  * @param string $string <p>
  * The string that is to be written.
  * </p>
@@ -876,7 +960,9 @@ function fwrite ($handle, $string, $length = null) {}
  * @since 4.0
  * @since 5.0
  */
-function fputs ($handle, $string, $length) {}
+function fputs($handle, $string, $length)
+{
+}
 
 /**
  * Attempts to create the directory specified by pathname.
@@ -906,7 +992,9 @@ function fputs ($handle, $string, $length) {}
  * @since 4.0
  * @since 5.0
  */
-function mkdir ($pathname, $mode = 0777, $recursive = false, $context = null) {}
+function mkdir($pathname, $mode = 0777, $recursive = false, $context = null)
+{
+}
 
 /**
  * Renames a file or directory
@@ -926,7 +1014,9 @@ function mkdir ($pathname, $mode = 0777, $recursive = false, $context = null) {}
  * @since 4.0
  * @since 5.0
  */
-function rename ($oldname, $newname, $context = null) {}
+function rename($oldname, $newname, $context = null)
+{
+}
 
 /**
  * Copies file
@@ -943,14 +1033,16 @@ function rename ($oldname, $newname, $context = null) {}
  * If the destination file already exists, it will be overwritten.
  * </p>
  * @param resource $context [optional] <p>
- * A valid context resource created with 
+ * A valid context resource created with
  * stream_context_create.
  * </p>
  * @return bool true on success or false on failure.
  * @since 4.0
  * @since 5.0
  */
-function copy ($source, $dest, $context = null) {}
+function copy($source, $dest, $context = null)
+{
+}
 
 /**
  * Create file with unique file name
@@ -967,7 +1059,9 @@ function copy ($source, $dest, $context = null) {}
  * @since 4.0
  * @since 5.0
  */
-function tempnam ($dir, $prefix) {}
+function tempnam($dir, $prefix)
+{
+}
 
 /**
  * Creates a temporary file
@@ -977,7 +1071,9 @@ function tempnam ($dir, $prefix) {}
  * @since 4.0
  * @since 5.0
  */
-function tmpfile () {}
+function tmpfile()
+{
+}
 
 /**
  * Reads entire file into an array
@@ -992,7 +1088,7 @@ function tmpfile () {}
  * FILE_USE_INCLUDE_PATH
  * Search for the file in the include_path.
  * @param resource $context [optional] <p>
- * A context resource created with the 
+ * A context resource created with the
  * stream_context_create function.
  * </p>
  * <p>
@@ -1010,7 +1106,9 @@ function tmpfile () {}
  * @since 4.0
  * @since 5.0
  */
-function file ($filename, $flags = null, $context = null) {}
+function file($filename, $flags = null, $context = null)
+{
+}
 
 /**
  * Reads entire file into a string
@@ -1026,7 +1124,7 @@ function file ($filename, $flags = null, $context = null) {}
  * search.
  * </p>
  * <p>
- * The value of flags can be any combination of 
+ * The value of flags can be any combination of
  * the following flags (with some restrictions), joined with the
  * binary OR (|)
  * operator.
@@ -1054,10 +1152,10 @@ function file ($filename, $flags = null, $context = null) {}
  * </td>
  * <td>
  * As of PHP 6, the default encoding of the read
- * data is UTF-8. You can specify a different encoding by creating a 
- * custom context or by changing the default using 
- * stream_default_encoding. This flag cannot be 
- * used with FILE_BINARY. 
+ * data is UTF-8. You can specify a different encoding by creating a
+ * custom context or by changing the default using
+ * stream_default_encoding. This flag cannot be
+ * used with FILE_BINARY.
  * </td>
  * </tr>
  * <tr valign="top">
@@ -1066,13 +1164,13 @@ function file ($filename, $flags = null, $context = null) {}
  * </td>
  * <td>
  * With this flag, the file is read in binary mode. This is the default
- * setting and cannot be used with FILE_TEXT. 
+ * setting and cannot be used with FILE_TEXT.
  * </td>
  * </tr>
  * </table>
  * </p>
  * @param resource $context [optional] <p>
- * A valid context resource created with 
+ * A valid context resource created with
  * stream_context_create. If you don't need to use a
  * custom context, you can skip this parameter by &null;.
  * </p>
@@ -1087,7 +1185,9 @@ function file ($filename, $flags = null, $context = null) {}
  * @since 4.3.0
  * @since 5.0
  */
-function file_get_contents ($filename, $flags = null, $context = null, $offset = null, $maxlen = null) {}
+function file_get_contents($filename, $flags = null, $context = null, $offset = null, $maxlen = null)
+{
+}
 
 /**
  * Write a string to a file
@@ -1110,8 +1210,8 @@ function file_get_contents ($filename, $flags = null, $context = null, $offset =
  * file_put_contents($filename, implode('', $array)).
  * </p>
  * @param int $flags [optional] <p>
- * The value of flags can be any combination of 
- * the following flags (with some restrictions), joined with the binary OR 
+ * The value of flags can be any combination of
+ * the following flags (with some restrictions), joined with the binary OR
  * (|) operator.
  * </p>
  * <p>
@@ -1136,7 +1236,7 @@ function file_get_contents ($filename, $flags = null, $context = null, $offset =
  * FILE_APPEND
  * </td>
  * <td>
- * If file filename already exists, append 
+ * If file filename already exists, append
  * the data to the file instead of overwriting it. Mutually
  * exclusive with LOCK_EX since appends are atomic and thus there
  * is no reason to lock.
@@ -1147,7 +1247,7 @@ function file_get_contents ($filename, $flags = null, $context = null, $offset =
  * LOCK_EX
  * </td>
  * <td>
- * Acquire an exclusive lock on the file while proceeding to the 
+ * Acquire an exclusive lock on the file while proceeding to the
  * writing. Mutually exclusive with FILE_APPEND.
  * </td>
  * </tr>
@@ -1156,11 +1256,11 @@ function file_get_contents ($filename, $flags = null, $context = null, $offset =
  * FILE_TEXT
  * </td>
  * <td>
- * data is written in text mode. If unicode 
+ * data is written in text mode. If unicode
  * semantics are enabled, the default encoding is UTF-8.
  * You can specify a different encoding by creating a custom context
  * or by using the stream_default_encoding to
- * change the default. This flag cannot be used with 
+ * change the default. This flag cannot be used with
  * FILE_BINARY. This flag is only available since
  * PHP 6.
  * </td>
@@ -1179,11 +1279,13 @@ function file_get_contents ($filename, $flags = null, $context = null, $offset =
  * </table>
  * </p>
  * @param resource $context [optional] <p>
- * A valid context resource created with 
+ * A valid context resource created with
  * stream_context_create.
  * </p>
  * @return int The function returns the number of bytes that were written to the file, or
  * false on failure.
  * @since 5.0
  */
-function file_put_contents ($filename, $data, $flags = null, $context = null) {}
+function file_put_contents($filename, $data, $flags = null, $context = null)
+{
+}
